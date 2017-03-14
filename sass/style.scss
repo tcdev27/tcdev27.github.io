@@ -325,8 +325,45 @@ button:active {
   background-color: $drkfaded;
 }
 
-.project {
-  
+#projects {
+  background-color: #f8c63d;
+  border: 2px solid $black;
+  margin-top: 0;
+  section {
+    // Put them on top of each other
+  }
+}
+
+.open {
+  display: block;
+}
+
+.closed {
+  display: none;
+}
+
+
+
+#tabs {
+  list-style-type: none;
+  margin-bottom: 0;
+  li {
+    float: left;
+    border: 2px solid $black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 25px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+    background-color: #f8c63d;
+    color: $black;
+    transform: translateY(2px);
+  }
+  li.open {
+    border-bottom: none;
+    transform: translateY(4px);
+  }
+
 }
 
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */

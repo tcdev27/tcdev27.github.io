@@ -298,6 +298,35 @@ button:active {
   font-size: 16pt;
   background-color: rgba(0, 0, 0, 0.85); }
 
+#projects {
+  background-color: #f8c63d;
+  border: 2px solid #000;
+  margin-top: 0; }
+
+.open {
+  display: block; }
+
+.closed {
+  display: none; }
+
+#tabs {
+  list-style-type: none;
+  margin-bottom: 0; }
+  #tabs li {
+    float: left;
+    border: 2px solid #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 25px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: 5px;
+    background-color: #f8c63d;
+    color: #000;
+    transform: translateY(2px); }
+  #tabs li.open {
+    border-bottom: none;
+    transform: translateY(4px); }
+
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
   /*  Structure  */

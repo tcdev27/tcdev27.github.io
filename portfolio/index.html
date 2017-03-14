@@ -11,20 +11,31 @@
     <header class="content column small-12 large-12">
       <h1>My Portfolio</h1>
     </header>
-    <section class="">
+    <section class="column small-12 large-12">
       <h2>Projects</h2>
-      <article class="content project column small-12 large-12">
-        <h3>Project Name</h3>
-        <p>Project Description</p>
-        <figure></figure>
-      </article>
+      <ul id="tabs" class="column small-12 large-12">
+        <li id="fendTab" class="tab open"><h3>Front-End</h3></li>
+        <li id="bendTab" class="tab"><h3>Back-End</h3></li>
+        <li id="uxTab" class="tab"><h3>Usability & UX</h3></li>
+      </ul>
+      <section id="projects" class="column small-12 large-12">
+        <section id="fendSection" class="open">
+          <h3>Front-End</h3>
+        </section>
+        <section id="bendSection" class="closed">
+          <h3>Back-End</h3>
+        </section>
+        <section id="uxSection"class="closed">
+          <h3>Usability & UX</h3>
+        </section>
+      </section>
     </section>
 </body>
 <div id="cd-nav">
     <a href="#" class="cd-nav-trigger">Menu<span></span></a>
     <nav id="cd-main-nav" class="column small-12 large-12">
         <ul class="row">
-            <li class="column small-12 large-12"><a     href="../index.html">Home </a></li>
+            <li class="column small-12 large-12"><a href="../index.html">Home </a></li>
             <li class="column small-12 large-12"><a href="../pages/about.html">About </a></li>
             <li class="column small-12 large-12"><a href="../pages/skills.html">Skills</a></li>
             <li class="column small-12 large-12"><a href="">Portfolio</a></li>
