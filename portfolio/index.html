@@ -12,23 +12,11 @@
       <h1>My Portfolio</h1>
     </header>
     <section class="column small-12 large-12">
-      <h2>Projects</h2>
-      <ul id="tabs" class="column small-12 large-12">
-        <li id="fendTab" class="tab open"><h3>Front-End</h3></li>
-        <li id="bendTab" class="tab"><h3>Back-End</h3></li>
-        <li id="uxTab" class="tab"><h3>Usability & UX</h3></li>
-      </ul>
-      <section id="projects" class="column small-12 large-12">
-        <section id="fendSection" class="open">
-          <h3>Front-End</h3>
-        </section>
-        <section id="bendSection" class="closed">
-          <h3>Back-End</h3>
-        </section>
-        <section id="uxSection"class="closed">
-          <h3>Usability & UX</h3>
-        </section>
-      </section>
+      <article class="content project">
+        <h2>Project Name</h2>
+        <p>Project Description</p>
+        <a href="">Find Out More</a><span></span>
+      </article>
     </section>
 </body>
 <div id="cd-nav">
@@ -43,6 +31,18 @@
             <li class="column small-12 large-12"><a href="../CV_Tom_Chadwick.pdf" target="_blank">View My CV</a></li>
         </ul>
     </nav>
+</div>
+<div id="contactContainer column small-12 large-12">
+  <form id="contactForm" class="hidden" action="php/html_form_send.php">
+    <h1>Contact Me</h1>
+    <label for="name">Name</label>
+    <input type="text" name="name">
+    <label for="email">Email Address</label>
+    <input type="email">
+    <label for="message">Message</label>
+    <textarea name="message" rows="8" cols="60"></textarea>
+    <button type="submit">Send</button>
+  </form>
 </div>
 <script
   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"

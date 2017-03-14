@@ -47,29 +47,5 @@ jQuery(document).ready(function($){
         }
     }
 
-    $('.tab').on('click', function(){
-      $(this).addClass('open');
-      var id = $(this).attr('id');
-      if(id ==  "fendTab") {
-        $('#fendSection').add('open');
-        $('#bendSection').removeClass('open');
-        $('#uxSection').removeClass('open');
-        $('#bendTab').removeClass('open');
-        $('#uxTab').removeClass('open');
-      } else if(id == "bendTab") {
-        $('#bendSection').addClass('open');
-        $('#fendSection').removeClass('open');
-        $('#uxSection').removeClass('open');
-        $('#fendTab').removeClass('open');
-        $('#uxTab').removeClass('open');
-      } else {
-        $('#uxSection').addClass('open');
-        $('#fendSection').removeClass('open');
-        $('#bendSection').removeClass('open');
-        $('#fendTab').removeClass('open');
-        $('#bendTab').removeClass('open');
-      }
-
-    });
 
 });
