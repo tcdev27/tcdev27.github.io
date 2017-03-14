@@ -1,0 +1,20 @@
+{
+  "name": "tchadwickdev",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://t_chadwick@bitbucket.org/t_chadwick/tchadwickdev.git"
+  },
+  "author": "Tom Chadwick",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/t_chadwick/tchadwickdev#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
