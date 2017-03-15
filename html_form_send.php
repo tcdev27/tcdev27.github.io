@@ -1,10 +1,10 @@
 <?php
 if(isset($_POST['email'])) {
-     
+
     $email_to = "tom.chadwick27@gmail.com";
-     
+
     $email_subject = "Contact Message";
-     
+
     /**
 	*	Error Page
 	*		- If an error occurs this function will be processed.
@@ -24,7 +24,7 @@ if(isset($_POST['email'])) {
 		echo '</div';
         die();
     }
-     
+
     /**
 	*	Check that Data Exists
 	**/
@@ -33,9 +33,9 @@ if(isset($_POST['email'])) {
         !isset($_POST['email']) ||
         !isset($_POST['telephone']) ||
         !isset($_POST['message'])) {
-        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+        died('We are sorry, but there appears to be a problem with the form you submitted.');
     }
-    
+
 	/**
 	*	Main Code Body
 	*		- Assign Variables & Expectations for Validation
@@ -68,25 +68,25 @@ if(isset($_POST['email'])) {
     died($error_message);
   }
     $email_message = "Form details below.\n\n";
-     
+
     function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
       return str_replace($bad,"",$string);
     }
-     
+
     $email_message .= "First Name: ".clean_string($first_name)."\n";
     $email_message .= "Last Name: ".clean_string($last_name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
     $email_message .= "Telephone: ".clean_string($telephone)."\n";
     $email_message .= "message: ".clean_string($message)."\n";
-     
-     
+
+
 // Create Email headers
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 // Send Email
-@mail($email_to, $email_subject, $email_message, $headers);  
+@mail($email_to, $email_subject, $email_message, $headers);
 }
 /**
 *	Confirmation Page
