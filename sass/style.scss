@@ -260,6 +260,12 @@ section#cover {
   padding: 5px;
 }
 
+header {
+  h1 {
+    padding-left: 10%;
+  }
+}
+
 button {
   background-color: $black;
   color: $white;
@@ -333,22 +339,6 @@ button:active {
 #projectName {
   background-image: url();
 }
-
-#contactContainer {
-  overflow: hidden;
-}
-
-#contactForm {
-  border: 2px solid $black;
-  position: absolute;
-}
-
-#contactForm.hidden {
-  position: absolute;
-  bottom: 0%;
-
-}
-
 
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
@@ -453,7 +443,7 @@ button:active {
 
   #welcome {
     position: absolute;
-    top: 0%;
+    top: 15%;
     max-width: 20%;
     border-bottom-right-radius: 25px;
     font-size: 16pt;

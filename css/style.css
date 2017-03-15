@@ -240,6 +240,9 @@ section#cover {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 5px; }
 
+header h1 {
+  padding-left: 10%; }
+
 button {
   background-color: #000;
   color: #fff;
@@ -304,17 +307,6 @@ button:active {
 
 #projectName {
   background-image: url(); }
-
-#contactContainer {
-  overflow: hidden; }
-
-#contactForm {
-  border: 2px solid #000;
-  position: absolute; }
-
-#contactForm.hidden {
-  position: absolute;
-  bottom: 0%; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
@@ -441,7 +433,7 @@ button:active {
     min-height: 450px; }
   #welcome {
     position: absolute;
-    top: 0%;
+    top: 15%;
     max-width: 20%;
     border-bottom-right-radius: 25px;
     font-size: 16pt;

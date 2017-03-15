@@ -13,7 +13,7 @@
         <nav id="cd-main-nav" class="column small-12 large-12">
             <ul class="row">
                 <li class="column small-12 large-12"><a href="../index.html">Home </a></li>
-                <li class="column small-12 large-12"><a href="">About </a></li>
+                <li class="column small-12 large-12"><a href="about.html">About </a></li>
                 <li class="column small-12 large-12"><a href="skills.html">Skills</a></li>
                 <li class="column small-12 large-12"><a href="../portfolio/index.html">Portfolio</a></li>
                 <li class="column small-12 large-12"><a href="">Contact</a></li>
@@ -24,9 +24,31 @@
     <section class="content column small-12 large-12">
       <div class="row">
         <header class="column small-12 large-12 content">
-            <h1>About Me</h1>
+            <h1>Contact Me</h1>
         </header>
-
+        <div id="contactContainer column small-12 large-12">
+          <form id="contactForm" class="row" action="../html_form_send.php" method="post">
+            <div class="column small-12 large-6">
+              <label for="first_name">First Name</label>
+              <input type="text" name="first_name">
+            </div>
+            <div class="column small-12 large-6">
+              <label for="last_name">Last Name</label>
+              <input type="text" name="last_name">
+            </div>
+            <div class="column small-12 large-12">
+              <label for="email">Email Address</label>
+              <input type="email">
+            </div>
+            <div class="column small-12 large-12">
+              <label for="message">Message</label>
+              <textarea name="message" rows="8" cols="30""></textarea>
+            </div>
+            <div class="column small-12 large-12">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 </body>
