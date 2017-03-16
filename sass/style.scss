@@ -339,13 +339,32 @@ button:active {
   margin-top: 0;
   min-height: 250px;
   background-color: $faded;
+  padding-left: 10px;
   aside img {
-    width: 75%;
+    width: 100%;
     margin: 20px;
+    border-radius: 5px;
   }
   button {
-    font-size: 85%;
+    font-size: 100%;
   }
+  .status {
+    font-family: $sketch;
+    font-weight: bold;
+    font-size: 16pt;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+  }
+  .complete {
+    color: $green;
+  }
+  .incomplete {
+    color: $orange;
+  }
+}
+.projectHeadImg img{
+  width: 100%;
 }
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
@@ -388,7 +407,16 @@ button:active {
           float: none;
         }
       }
+      .status {
+        text-align: center;
+        font-size: 110%;
+      }
     }
+
+    header h1 {
+      font-size: 125%;
+    }
+
 }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) { // Tablet
@@ -476,5 +504,9 @@ button:active {
       width: 75%;
       float: right;
     }
+  }
+
+  .projectHeadImg img{
+    width: 50%;
   }
 }

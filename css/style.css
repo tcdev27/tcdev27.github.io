@@ -308,12 +308,28 @@ button:active {
   border-bottom: 2px solid #324e6c;
   margin-top: 0;
   min-height: 250px;
-  background-color: rgba(0, 0, 0, 0.6); }
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-left: 10px; }
   .project aside img {
-    width: 75%;
-    margin: 20px; }
+    width: 100%;
+    margin: 20px;
+    border-radius: 5px; }
   .project button {
-    font-size: 85%; }
+    font-size: 100%; }
+  .project .status {
+    font-family: "Shadows Into Light";
+    font-weight: bold;
+    font-size: 16pt;
+    padding: 0;
+    margin: 0;
+    text-align: right; }
+  .project .complete {
+    color: #18a800; }
+  .project .incomplete {
+    color: #e78a00; }
+
+.projectHeadImg img {
+  width: 100%; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
@@ -360,7 +376,12 @@ button:active {
     margin-top: 5%; }
     .project aside img {
       width: 50%;
-      float: none; } }
+      float: none; }
+  .project .status {
+    text-align: center;
+    font-size: 110%; }
+  header h1 {
+    font-size: 125%; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {
@@ -455,4 +476,6 @@ button:active {
     background-color: rgba(0, 0, 0, 0.85); }
   .project aside img {
     width: 75%;
-    float: right; } }
+    float: right; }
+  .projectHeadImg img {
+    width: 50%; } }
