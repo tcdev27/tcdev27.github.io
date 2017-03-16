@@ -331,6 +331,20 @@ button:active {
 .projectHeadImg img {
   width: 100%; }
 
+article {
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-top: 2px solid #324e6c;
+  border-bottom: 2px solid #324e6c;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-left: 10px; }
+
+footer {
+  position: absolute;
+  bottom: 0%;
+  text-align: center; }
+
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
   /*  Structure  */
@@ -379,9 +393,7 @@ button:active {
       float: none; }
   .project .status {
     text-align: center;
-    font-size: 110%; }
-  header h1 {
-    font-size: 125%; } }
+    font-size: 110%; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {

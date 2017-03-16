@@ -366,6 +366,22 @@ button:active {
 .projectHeadImg img{
   width: 100%;
 }
+
+article {
+  border-left: 2px solid $black;
+  border-right: 2px solid $black;
+  border-top: 2px solid $greyBlue;
+  border-bottom: 2px solid $greyBlue;
+  margin-top: 0;
+  background-color: $faded;
+  padding-left: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0%;
+  text-align: center;
+}
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
     $x: 1;
@@ -412,11 +428,6 @@ button:active {
         font-size: 110%;
       }
     }
-
-    header h1 {
-      font-size: 125%;
-    }
-
 }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) { // Tablet
