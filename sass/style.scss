@@ -365,6 +365,7 @@ button:active {
 }
 .projectHeadImg img{
   width: 100%;
+  border-radius: 5px;
 }
 
 article {
@@ -377,10 +378,10 @@ article {
   padding-left: 10px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0%;
-  text-align: center;
+.copyright {
+  font-family: $main;
+  margin-top: 500px;
+
 }
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
@@ -394,10 +395,6 @@ footer {
 
     .small-hidden {
         display: none;
-    }
-
-    html {
-      font-size: 18pt;
     }
 
     section#cover {
@@ -427,6 +424,9 @@ footer {
         text-align: center;
         font-size: 110%;
       }
+    }
+    .copyright{
+      font-size: 100%;
     }
 }
 
@@ -466,6 +466,9 @@ footer {
     border-radius: 5px;
     border: 2px solid $white;
     border-bottom: 2px solid $white;
+  }
+  .project aside img {
+    margin: 0;
   }
 }
 @media screen and (min-device-width: 68.75em) { //Desktop

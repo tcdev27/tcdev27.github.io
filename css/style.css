@@ -329,7 +329,8 @@ button:active {
     color: #e78a00; }
 
 .projectHeadImg img {
-  width: 100%; }
+  width: 100%;
+  border-radius: 5px; }
 
 article {
   border-left: 2px solid #000;
@@ -340,10 +341,9 @@ article {
   background-color: rgba(0, 0, 0, 0.6);
   padding-left: 10px; }
 
-footer {
-  position: absolute;
-  bottom: 0%;
-  text-align: center; }
+.copyright {
+  font-family: "Roboto";
+  margin-top: 500px; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
@@ -374,8 +374,6 @@ footer {
     width: 100%; }
   .small-hidden {
     display: none; }
-  html {
-    font-size: 18pt; }
   section#cover {
     min-height: 150px; }
   .skillLabel a {
@@ -393,7 +391,9 @@ footer {
       float: none; }
   .project .status {
     text-align: center;
-    font-size: 110%; } }
+    font-size: 110%; }
+  .copyright {
+    font-size: 100%; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {
@@ -438,7 +438,9 @@ footer {
     font-weight: bold;
     border-radius: 5px;
     border: 2px solid #fff;
-    border-bottom: 2px solid #fff; } }
+    border-bottom: 2px solid #fff; }
+  .project aside img {
+    margin: 0; } }
 
 @media screen and (min-device-width: 68.75em) {
   /*  Structure  */
