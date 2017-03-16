@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['email'])) {
 
-    $email_to = "tom.chadwick27@gmail.com";
+    $email_to = "tom@tchadwickdev.co.uk";
 
     $email_subject = "Contact Message";
 
@@ -103,8 +103,6 @@ $headers = 'From: '.$email_from."\r\n".
 		<link rel="icon" href="img/icon.ico">
 		<!-- Styling -->
 		<link rel="stylesheet" href="../css/style.css"/>
-		<link rel="stylesheet" href="../css/animate.css"/>
-		<link href="../css/hover.css" rel="stylesheet">
 		<!-- Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
 	</head>
@@ -113,7 +111,7 @@ $headers = 'From: '.$email_from."\r\n".
 			<h1>Message Sent!</h1>
 			<!-- Was = javascript:history.back() -->
 			<a href="http://www.tchadwickdev.co.uk"><button class= "animated rubberBand">Click Here to Go Back</button></a>
-			<img class= "animated fadeinleftBig" src="../img/sent_icon.png" alt="message_sent" align="left" width="15%">
+			<img class= "" src="../img/sent_icon.png" alt="message_sent" align="left" width="15%">
 		</div>
 	</body>
 </html>

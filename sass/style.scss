@@ -340,6 +340,13 @@ button:active {
   background-image: url();
 }
 
+.maintenance {
+  background-color: $black;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
     $x: 1;
