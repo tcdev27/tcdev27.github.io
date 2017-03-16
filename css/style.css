@@ -261,7 +261,7 @@ button:active {
   transform: translateY(4px); }
 
 .skills > .blue {
-  background-color: #3d83cd; }
+  background-color: #5e99d7; }
 
 .skills > .orange {
   background-color: #e78a00; }
@@ -354,7 +354,8 @@ article {
   .description .note {
     font-size: 80%;
     font-family: "Architects Daughter";
-    margin: 1em; }
+    margin: 1em;
+    color: #5e99d7; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
