@@ -332,12 +332,20 @@ button:active {
 }
 
 .project {
-  border: 2px solid $black;
+  border-left: 2px solid $black;
+  border-right: 2px solid $black;
+  border-top: 2px solid $greyBlue;
+  border-bottom: 2px solid $greyBlue;
   margin-top: 0;
-}
-
-#projectName {
-  background-image: url();
+  min-height: 250px;
+  background-color: $faded;
+  aside img {
+    width: 75%;
+    margin: 20px;
+  }
+  button {
+    font-size: 85%;
+  }
 }
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
@@ -366,6 +374,20 @@ button:active {
       border-radius: 5px;
       border: 2px solid $white;
       border-bottom: 2px solid $white;
+    }
+
+    .project {
+      div.btnContainer {
+        text-align: center;
+      }
+      aside {
+        text-align: center;
+        margin-top: 5%;
+        img {
+          width: 50%;
+          float: none;
+        }
+      }
     }
 }
 
@@ -449,4 +471,10 @@ button:active {
     background-color: $drkfaded;
   }
 
+  .project {
+    aside img {
+      width: 75%;
+      float: right;
+    }
+  }
 }

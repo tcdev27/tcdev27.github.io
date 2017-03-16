@@ -302,11 +302,18 @@ button:active {
   background-color: rgba(0, 0, 0, 0.85); }
 
 .project {
-  border: 2px solid #000;
-  margin-top: 0; }
-
-#projectName {
-  background-image: url(); }
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-top: 2px solid #324e6c;
+  border-bottom: 2px solid #324e6c;
+  margin-top: 0;
+  min-height: 250px;
+  background-color: rgba(0, 0, 0, 0.6); }
+  .project aside img {
+    width: 75%;
+    margin: 20px; }
+  .project button {
+    font-size: 85%; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
@@ -345,7 +352,15 @@ button:active {
     font-weight: bold;
     border-radius: 5px;
     border: 2px solid #fff;
-    border-bottom: 2px solid #fff; } }
+    border-bottom: 2px solid #fff; }
+  .project div.btnContainer {
+    text-align: center; }
+  .project aside {
+    text-align: center;
+    margin-top: 5%; }
+    .project aside img {
+      width: 50%;
+      float: none; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {
@@ -437,4 +452,7 @@ button:active {
     max-width: 20%;
     border-bottom-right-radius: 25px;
     font-size: 16pt;
-    background-color: rgba(0, 0, 0, 0.85); } }
+    background-color: rgba(0, 0, 0, 0.85); }
+  .project aside img {
+    width: 75%;
+    float: right; } }
