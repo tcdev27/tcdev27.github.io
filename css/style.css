@@ -249,7 +249,8 @@ button {
   color: #fff;
   font-family: "Days One";
   border: none;
-  border-bottom: 4px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
   border-radius: 5px;
   font-size: 18pt;
   padding: 8px;
