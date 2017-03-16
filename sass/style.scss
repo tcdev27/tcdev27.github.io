@@ -118,7 +118,8 @@ html {
 #cd-nav li a:hover {
   font-weight: bold;
   border-radius: 5px;
-  border: 2px solid $white;
+  border-right: 2px solid $white;
+  border-left: 2px solid $white;
   border-bottom: 2px solid $white;
 }
 
@@ -380,8 +381,6 @@ article {
 
 .copyright {
   font-family: $main;
-  margin-top: 1px;
-
 }
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
@@ -427,6 +426,13 @@ article {
     }
     .copyright{
       font-size: 100%;
+    }
+
+    #cd-nav li a {
+      font-weight: bold;
+      border-radius: 5px;
+      border-right: 2px solid $white;
+      border-bottom: 2px solid $white;
     }
 }
 

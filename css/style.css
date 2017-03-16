@@ -108,7 +108,8 @@ html {
 #cd-nav li a:hover {
   font-weight: bold;
   border-radius: 5px;
-  border: 2px solid #fff;
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
   border-bottom: 2px solid #fff; }
 
 .cd-nav-trigger {
@@ -342,8 +343,7 @@ article {
   padding-left: 10px; }
 
 .copyright {
-  font-family: "Roboto";
-  margin-top: 1px; }
+  font-family: "Roboto"; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
@@ -393,7 +393,12 @@ article {
     text-align: center;
     font-size: 110%; }
   .copyright {
-    font-size: 100%; } }
+    font-size: 100%; }
+  #cd-nav li a {
+    font-weight: bold;
+    border-radius: 5px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {
