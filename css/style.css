@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Days+One|Roboto:400,700|Shadows+Into+Light");
+@import url("https://fonts.googleapis.com/css?family=Days+One|Roboto:400,700|Shadows+Into+Light|Nunito:400,700|Architects+Daughter");
 html {
   background: #324e6c;
   color: #fff;
@@ -344,6 +344,17 @@ article {
 
 .copyright {
   font-family: "Roboto"; }
+
+.description {
+  font-size: 150%;
+  padding: 1em;
+  font-family: "Nunito"; }
+  .description span {
+    float: right; }
+  .description .note {
+    font-size: 80%;
+    font-family: "Architects Daughter";
+    margin: 1em; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */

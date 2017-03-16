@@ -382,6 +382,20 @@ article {
 .copyright {
   font-family: $main;
 }
+
+.description {
+  font-size: 150%;
+  padding: 1em;
+  font-family: $description;
+  span {
+    float: right;
+  }
+  .note {
+    font-size: 80%;
+    font-family: $note;
+    margin: 1em;
+  }
+}
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
     $x: 1;
