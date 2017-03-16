@@ -343,7 +343,7 @@ article {
 
 .copyright {
   font-family: "Roboto";
-  margin-top: 500px; }
+  margin-top: 1px; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
