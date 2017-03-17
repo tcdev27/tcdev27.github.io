@@ -327,6 +327,25 @@ button:focus:not(:active)::after {
   animation: ripple 1s ease-out;
 }
 
+a:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba($green, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+
+a:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
 .skills {
   > .blue {
     background-color: $ltBlue;

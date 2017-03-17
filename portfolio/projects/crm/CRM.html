@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CRM</title>
+  <link rel="stylesheet" media="all" href="assets/css/old-application.css" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="assets/css/application.css" data-turbolinks-track="true">
+  <script src="/assets/application-19c089516f1175418b8edd3d5cd83f48e0b2f522cdce38ab4530fa3cdd54e72e.js" data-turbolinks-track="true"></script>
+  <script src="assets/js/application.js" data-turbolinks-track="true"></script><style type="text/css"></style>
+  <script src="assets/js/script.js" data-turbolinks-track="true"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NYrWQu5SzcObpkkfh7bAqfcnrO/Oub351UzuwkWE/u78TaG6mG5s8o6h0JB3KQgXYox0QNpLjNAwsnMwuE4Rqw==" />
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CRM</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+				<li class=""><a href="Contacts.html">Contacts</a></li>
+				<li class=""><a href="Projects.html">Projects</a></li>
+				<li class=""><a href="Businesses.html">Businesses</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Edit account</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a rel="nofollow" data-method="delete" href="/users/sign_out">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+	<h2>Log in</h2>
+
+<form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="tqGkyJN8WSpYUEtSTrQ7a5oiKuXFRpJLVRiRp3YWA5h/ZtMw5UD4G01X0t2+K/PVD4nyStG0o2Kw5gxVi9zs3Q==" />
+  <div class="field">
+    <label for="user_email">Email</label><br />
+    <input autofocus="autofocus" type="email" value="" name="user[email]" id="user_email" />
+  </div>
+
+  <div class="field">
+    <label for="user_password">Password</label><br />
+    <input autocomplete="off" type="password" name="user[password]" id="user_password" />
+  </div>
+
+    <div class="field">
+      <input name="user[remember_me]" type="hidden" value="0" /><input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" />
+      <label for="user_remember_me">Remember me</label>
+    </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Log in" />
+  </div>
+</form>
+
+  <a href="#SignUp">Sign up</a><br />
+
+  <a href="#ForgotPassword">Forgot your password?</a><br />
+
+
+
+
+
+</div>
+
+</body>
+</html>

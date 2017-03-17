@@ -1,0 +1,274 @@
+/**
+ *
+ *      Style Analysis:
+ *
+ *          - White Text.
+ *          - Titles in Big Capitals Sans Serif.
+ *          - Rest of text in serif.
+ *          - Text Colour is #474e56 on white bg.
+ *              - Same colour is used as dark background.
+ *          - Some Areas use $beige.
+ *          - Links on white bg are #c99e67.
+ *          - Buttons change upon hover, either start with white fill
+ *            and dark colour^^ border & text. OR vice-versa.
+ *
+ *          Notes: Need to look at aria roles and change the focus styling
+ *
+ **/
+
+
+/**
+ *
+ *      [1] - Imports
+ **/
+
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,700');
+//Icons
+@import url('https://use.fontawesome.com/13bf5268a0.js');
+
+/**
+ *
+ *      [2] - Variables
+ *
+ **/
+
+// Colours
+$bg: #474e56;
+$white: #ffffff;
+$beige: #CDA775;
+$dkrBeige: #aa824d;
+// Fonts
+$title: 'Roboto', sans-serif;
+$text: 'PT Serif', serif;
+// TODO: Clean UP!
+
+/**
+ *
+ *      [3] - Styling
+ *
+ **/
+
+table {
+    font-family: $text;  // Is this a good idea? Does not seem that readable.
+
+}
+
+h1, h2, h3 {
+    font-family: $title;
+}
+
+.navbar {
+    background-color: $bg;
+    font-family: $title;
+}
+
+.navbar-default
+.navbar-brand {
+    color: $white;
+}
+
+.navbar-default
+.navbar-brand:hover {
+    color: $beige;
+}
+
+.navbar-default
+.navbar-nav li a {
+    color: $white;
+}
+
+.navbar-default
+.navbar-nav li a:hover {
+    color: $beige;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color: $beige;
+    color: $bg;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: $beige;
+    color: $bg;
+}
+
+.dropdown-menu {
+    background-color: $beige;
+    color: $white;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 2px solid $bg;
+    color: $bg;
+}
+
+.btn-primary:hover{
+    background-color: $bg;
+    border: 2px solid $bg;
+    color: $white;
+}
+
+table a {
+    padding: 12px;
+    //margin: 1em;
+    background-color: transparent;
+    color: $dkrBeige;
+    border-radius: 8px;
+    font-family: $title;
+    //padding-bottom: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+table a:hover {
+    //border-bottom: 4px solid $bg;
+    background-color: $bg;
+    color: $white;
+    text-decoration: none;
+    .text-warning {
+      color: $white;
+    }
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: $bg;
+}
+
+input[type=submit] {
+    background-color: transparent;
+    border: 2px solid $bg;
+    color: $bg;
+    border-radius: 4px;
+}
+
+input[type=submit]:hover{
+    background-color: $bg;
+    border: 2px solid $beige;
+    color: $white;
+}
+
+
+//Responsive Table
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+/* Zebra striping */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+th {
+  background: $bg;
+  color: white;
+  font-weight: bold;
+}
+td, th {
+    padding: 12px;
+    text-align: left;
+}
+
+
+
+
+@media screen and (max-device-width: 43em) { //Mobile
+
+    h1 {
+      font-size: 72pt;
+    }
+    // Responsive Table
+    //Adapted fromhttp://allthingssmitty.com/2016/10/03/responsive-table-layout/
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+    table {
+        font-size: 52pt;
+        margin-top: 200px;
+    }
+
+    .glyphicon {
+        font-size: 100px;
+        vertical-align: middle;
+    }
+
+    table thead {
+    border: none;
+    height: 1px;
+    //margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    display: block;
+    margin-bottom: 3em;
+    //border: 5px solid $beige;
+    border: 1px solid $bg;
+    // border-bottom: none;
+  }
+  table td {
+    display: block;
+    text-align: right;
+    padding: 0;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    text-align: left;
+    width: 100%;
+    background-color: $bg;
+    color: $white;
+    //border-bottom: 5px solid $bg;
+    //color: $bg;
+    font-family: $title;
+  }
+  .table tbody tr td {
+    padding: 0;
+  }
+
+  .tblButton {
+    width: 33.333%;
+    text-align: center;
+    float: left;
+
+  }
+
+  table tbody tr td.tblButton {
+    padding-bottom: 2%;
+  }
+
+  .container .btn {
+      position: absolute;
+      top: 15%;
+      right: 2%;
+      border-radius: 10%;
+      font-size: 56pt;
+      background-color: transparent;
+      border-left: none;
+      border-right: 8px solid $bg;
+      border-bottom: 8px solid $bg;
+      border-top: none;
+      color: $bg;
+
+  }
+  .container .btn:hover {
+      border-right: none;
+      border-left: 8px solid $bg;
+      border-top: 8px solid $bg;
+      border-bottom: none;
+      background-color: $bg;
+      color: $white;
+  }
+
+
+  //Mobile Nav
+
+
+
+
+}

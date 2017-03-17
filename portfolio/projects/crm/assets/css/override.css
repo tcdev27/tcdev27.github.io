@@ -1,0 +1,67 @@
+
+
+.navbar {
+    color: #C31B1E;
+    background-color: #474e56;
+}
+
+.navbar-default
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-default
+.navbar-brand:hover {
+    color: #CDA775;
+}
+
+.navbar-default
+.navbar-nav li a {
+    color: #fff;
+}
+
+.navbar-default
+.navbar-nav li a:hover {
+    color: #CDA775;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color: #CDA775;
+    color: #474e56;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    background-color: #CDA775;
+    color: #474e56;
+}
+
+.dropdown-menu {
+    background-color: #CDA775;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: transparent;
+    border: 2px solid #474e56;
+    color: #474e56;
+}
+
+.btn-primary:hover{
+    background-color: #474e56;
+    border: 2px solid #474e56;
+    color: #fff;
+}
+
+table a {
+    padding: 0.5em;
+    margin: 1em;
+    background-color: transparent;
+    color: #474e56;
+    border-radius: 4px;
+}
+
+table a:hover {
+    background-color: #474e56;
+    color: #fff;
+    text-decoration: none;
+} 
