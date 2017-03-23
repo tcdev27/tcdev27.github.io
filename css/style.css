@@ -7,6 +7,9 @@ html {
 .centered {
   text-align: center; }
 
+.hidden {
+  display: none; }
+
 .row {
   width: 100%;
   max-width: 62rem;
@@ -237,6 +240,18 @@ section#cover {
     top: 0%;
     right: 0%; }
 
+#aboutAvatar {
+  text-align: center; }
+  #aboutAvatar img {
+    position: relative;
+    width: 20%;
+    margin: 0;
+    border: 4px solid #000;
+    border-radius: 25px; }
+
+.bottomBtn {
+  margin-bottom: 50px; }
+
 .content {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 5px; }
@@ -343,6 +358,9 @@ a:focus:not(:active)::after {
   padding: 6px; }
   .skill h3 {
     font-family: "Roboto"; }
+  .skill article {
+    border-bottom: 1px solid #000;
+    border-top: none; }
 
 .sketch {
   font-family: "Shadows Into Light";
@@ -391,8 +409,7 @@ article {
   border-top: 2px solid #324e6c;
   border-bottom: 2px solid #324e6c;
   margin-top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding-left: 10px; }
+  background-color: rgba(0, 0, 0, 0.6); }
 
 .copyright {
   font-family: "Roboto"; }
@@ -408,6 +425,12 @@ article {
     font-family: "Architects Daughter";
     margin: 1em;
     color: #88bff9; }
+
+#icons .icon {
+  padding: 0;
+  margin: 0; }
+  #icons .icon img {
+    width: 50%; }
 
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
@@ -436,6 +459,8 @@ article {
     width: 91.666%; }
   .small-12 {
     width: 100%; }
+  html {
+    padding-bottom: 75px; }
   .small-hidden {
     display: none; }
   section#cover {
@@ -462,7 +487,9 @@ article {
     font-weight: bold;
     border-radius: 5px;
     border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff; } }
+    border-bottom: 2px solid #fff; }
+  .description {
+    padding: 0; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {
@@ -492,6 +519,8 @@ article {
     width: 91.666%; }
   .large-12 {
     width: 100%; }
+  html {
+    padding-bottom: 75px; }
   .large-hidden {
     display: none; }
   #cd-nav ul {

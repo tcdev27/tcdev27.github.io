@@ -10,6 +10,10 @@ html {
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
 // Responsive Layout
 
 .row {
@@ -255,7 +259,20 @@ section#cover {
   position: relative;
   text-align: center;
 }
+#aboutAvatar {
+  img {
+    position: relative;
+    width: 20%;
+    margin: 0;
+    border: 4px solid $black;
+    border-radius: 25px;
+  }
+  text-align: center;
+}
 
+.bottomBtn {
+  margin-bottom: 50px;
+}
 .content {
   background-color: $faded;
   padding: 5px;
@@ -382,6 +399,10 @@ a:focus:not(:active)::after {
   h3 {
     font-family: $main;
   }
+  article {
+    border-bottom: 1px solid $black;
+    border-top: none;
+  }
 }
 
 .sketch {
@@ -440,7 +461,7 @@ article {
   border-bottom: 2px solid $greyBlue;
   margin-top: 0;
   background-color: $faded;
-  padding-left: 10px;
+  //padding-left: 10px;
 }
 
 .copyright {
@@ -461,6 +482,16 @@ article {
     color: $ltBlue;
   }
 }
+
+#icons {
+  .icon {
+    padding: 0;
+    margin: 0;
+    img {
+      width: 50%;
+    }
+  }
+}
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
     $x: 1;
@@ -469,6 +500,11 @@ article {
             width: #{$size};
         }
         $x: $x + 1;
+    }
+
+    html {
+      //Allow extra scrolling to move menu below content
+      padding-bottom: 75px;
     }
 
     .small-hidden {
@@ -513,6 +549,9 @@ article {
       border-right: 2px solid $white;
       border-bottom: 2px solid $white;
     }
+    .description {
+      padding: 0;
+    }
 }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) { // Tablet
@@ -526,6 +565,10 @@ article {
           width: #{$size};
       }
       $x: $x + 1;
+  }
+  html {
+    //Allow extra scrolling to move menu below content
+    padding-bottom: 75px;
   }
 
   .large-hidden {
