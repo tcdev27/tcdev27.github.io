@@ -34,10 +34,19 @@
  **/
 
 // Colours
-$bg: #474e56;
-$white: #ffffff;
-$beige: #CDA775;
-$dkrBeige: #aa824d;
+
+// Colours Taken from CleverSteam Site
+$bg: #474e56; // Dark Background
+$ltbg: #d7d7d7; //Light Background
+$beige: #CDA775;  //Beige
+
+//Colours Added for Accessibility
+$borderBeige: #aa824d; // Darker Colour for Borders (Against White BG)
+$textBeige: #645034; // Passes WCAG AAA
+
+//Generic Colour Variables
+$white: #fff;
+$black: #000;
 // Fonts
 $title: 'Roboto', sans-serif;
 $text: 'PT Serif', serif;
@@ -49,6 +58,21 @@ $text: 'PT Serif', serif;
  *
  **/
 
+ // All elements, round off borders and remove padding/margin. Helps counteract
+ // any bootstrap default values (at this leve)
+* {
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+
+}
+
+.container {
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 90%;
+}
+
 table {
     font-family: $text;  // Is this a good idea? Does not seem that readable.
 
@@ -56,11 +80,27 @@ table {
 
 h1, h2, h3 {
     font-family: $title;
+    background-color: $bg;
+    color: $white;
+    margin-bottom: 1em;
+    padding-top: 10px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 25px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    text-align: center;
+    padding: 32px;
+    //text-transform: uppercase; -- Makes it more like their site...is this necessary?
 }
+
 
 .navbar {
     background-color: $bg;
     font-family: $title;
+    border: none;
+    border-radius: 0;
+    margin: 0;
 }
 
 .navbar-default
@@ -76,11 +116,16 @@ h1, h2, h3 {
 .navbar-default
 .navbar-nav li a {
     color: $white;
+    text-align: left;
 }
 
 .navbar-default
 .navbar-nav li a:hover {
     color: $beige;
+}
+
+.navbar-nav>li>.dropdown-menu {
+  background-color: $bg;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
@@ -93,36 +138,70 @@ h1, h2, h3 {
     color: $bg;
 }
 
-.dropdown-menu {
-    background-color: $beige;
-    color: $white;
-}
+
 
 .btn-primary {
     background-color: transparent;
-    border: 2px solid $bg;
+    width: 30%;
+    font-size: 150%;
+    padding: 12px;
+    //transform: translateX(-50%);
+    //border: 2px solid $bg;
     color: $bg;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border-bottom: 4px solid $black;
+    border-left: 1px solid $black;
+    border-right: 4px solid $black;
+    border-top: 1px solid $black;
 }
 
 .btn-primary:hover{
+    background-color: $white;
+    border-bottom: 4px solid $black;
+    border-left: 1px solid $black;
+    border-right: 4px solid $black;
+    border-top: 1px solid $black;
+    color: $bg;
+    .text-warning {
+      color: $beige;
+    }
+}
+
+
+.btn-primary:active{
     background-color: $bg;
     border: 2px solid $bg;
     color: $white;
+    .text-warning {
+      color: $white;
+    }
 }
 
-table a {
+.btn-primary:focus{
+    background-color: $bg;
+    border: 2px solid $bg;
+    color: $white;
+    .text-warning {
+      color: $white;
+    }
+}
+
+
+a {
     padding: 12px;
     //margin: 1em;
     background-color: transparent;
-    color: $dkrBeige;
+    color: $textBeige;
     border-radius: 8px;
     font-family: $title;
     //padding-bottom: 0;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
 
-table a:hover {
+a:hover {
     //border-bottom: 4px solid $bg;
     background-color: $bg;
     color: $white;
@@ -132,21 +211,72 @@ table a:hover {
     }
 }
 
+  /*
+  table tr:hover {
+    border-left: 4px solid $bg;
+    border-right: 4px solid $bg;
+  }*/
+
+
+
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background-color: $bg;
 }
 
 input[type=submit] {
-    background-color: transparent;
-    border: 2px solid $bg;
-    color: $bg;
-    border-radius: 4px;
+    @extend .btn-primary;
 }
 
-input[type=submit]:hover{
-    background-color: $bg;
-    border: 2px solid $beige;
-    color: $white;
+
+// Indvidual View Pages
+
+.panel-default>.panel-heading {
+  background-color: $bg;
+  color: $white;
+}
+
+.panel-heading {
+  background-color: $bg;
+}
+
+.list-group-item {
+  background-color: $ltbg;
+}
+.list-group-item:nth-child(odd) {
+  background-color: $white;
+}
+
+.panel a {
+  border-left: 2px solid $black;
+  border-right: 2px solid $black;
+  border-top: 2px solid $black;
+  border-bottom: 2px solid $black;
+  border-radius: 20px;
+}
+
+.panel a:active {
+  border: 1px solid $bg;
+}
+
+.list-group-item a {
+  color: $black;
+  border-left: 1px solid $bg;
+  border-right: 1px solid $bg;
+  border-top: 1px solid $bg;
+  border-bottom: 4px solid $bg;
+  text-decoration: underline;
+  //border-radius: 0;
+}
+
+.list-group-item a:hover {
+  background-color: $bg;
+  color: $white;
+}
+
+.list-group-item a:active {
+  background-color: $bg;
+  color: $white;
+  text-decoration: none;
 }
 
 
@@ -163,34 +293,55 @@ th {
   background: $bg;
   color: white;
   font-weight: bold;
+  border-radius: 0; //Counteract the top rule for * all
 }
 td, th {
     padding: 12px;
     text-align: left;
+    font-size: 110%;
+}
+
+
+
+a[href="javascript:history.back()"] {
+  @extend .btn-primary;
+  margin: 12px;
+  max-width: 15%;
 }
 
 
 
 
-@media screen and (max-device-width: 43em) { //Mobile
+@media screen and (max-device-width: 43em) {                                       //Mobile
 
-    h1 {
-      font-size: 72pt;
+    html {
+      //font-size: 20pt;
+      padding-bottom: 75px; //THIS DID NOT WORK ON ACTUAL DEVICE
     }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+
     // Responsive Table
     //Adapted fromhttp://allthingssmitty.com/2016/10/03/responsive-table-layout/
 
     .container {
         width: 100%;
         max-width: 100%;
+        margin: 0;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     table {
-        font-size: 52pt;
-        margin-top: 200px;
+        font-size: 16pt;
+        margin-top: 60px;
+        table-layout:fixed
     }
 
     .glyphicon {
-        font-size: 100px;
+        font-size: 30px;
         vertical-align: middle;
     }
 
@@ -199,23 +350,30 @@ td, th {
     height: 1px;
     //margin: -1px;
     overflow: hidden;
-    padding: 0;
     position: absolute;
     width: 1px;
   }
 
   table tr {
     display: block;
-    margin-bottom: 3em;
-    //border: 5px solid $beige;
-    border: 1px solid $bg;
-    // border-bottom: none;
+    //border-top: 5px solid $beige;
+    //border: 1px solid $bg;
+    border: none;
   }
+
   table td {
     display: block;
     text-align: right;
     padding: 0;
+    border: none;
+    word-wrap: break-word;
   }
+
+  td, th {
+      font-size: 100%;
+  }
+
+
   table td:before {
     content: attr(data-label);
     float: left;
@@ -226,6 +384,7 @@ td, th {
     //border-bottom: 5px solid $bg;
     //color: $bg;
     font-family: $title;
+    padding-left: 4px;
   }
   .table tbody tr td {
     padding: 0;
@@ -235,40 +394,137 @@ td, th {
     width: 33.333%;
     text-align: center;
     float: left;
+  }
 
+  .table>tbody>tr>td {
+    border: none;
   }
 
   table tbody tr td.tblButton {
-    padding-bottom: 2%;
+    padding-top: 0px;
+    padding-bottom: 50px;
+    border-bottom: 8px solid $borderBeige;
+    border-radius: 0;
+    a {
+      border-bottom: 4px solid $black;
+      border-left: 1px solid $black;
+      border-right: 4px solid $black;
+      border-top: 1px solid $black;
+      margin-top: 10px;
+      min-width: 100px;
+      max-width: 100px;
+    }
   }
 
-  .container .btn {
-      position: absolute;
-      top: 15%;
-      right: 2%;
-      border-radius: 10%;
-      font-size: 56pt;
-      background-color: transparent;
-      border-left: none;
-      border-right: 8px solid $bg;
-      border-bottom: 8px solid $bg;
-      border-top: none;
+  .tblButton {
+    border-bottom: 4px solid $textBeige;
+  }
+
+  .container .btn, .panel-body a {
+      //position: absolute;
+      //top: 15%;
+      //right: 2%;
+      font-size: 16pt;
+      //background-color: transparent;
+      //border-left: none;
+      //border-right: 8px solid $bg;
+      //border-bottom: 8px solid $bg;
+      //border-top: none;
       color: $bg;
 
   }
-  .container .btn:hover {
-      border-right: none;
-      border-left: 8px solid $bg;
-      border-top: 8px solid $bg;
-      border-bottom: none;
+  .container a.btn:active, .panel-default a:active {
+      //border-right: none;
+      //border-left: 8px solid $bg;
+      //border-top: 8px solid $bg;
+      //border-bottom: none;
       background-color: $bg;
       color: $white;
+      .text-warning {
+        color: $white;
+      }
+
   }
 
 
   //Mobile Nav
 
+  .navbar {
+    font-size: 24pt;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    margin: 0;
+    width: 100%;
+    border: none;
+    border-top: 5px solid $borderBeige;
+    min-height: 75px;
+    .navbar-brand {
+      font-size: 20pt;
+    }
+    .navbar-toggle {
+      padding: 18px;
+
+      .icon-bar {
+        width: 26px;
+        background-color: $white;
+        padding-right: 0;
+        padding-left: 0;
+
+      }
+    }
+  }
+  // Change colour of active menu button: ;
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: $textBeige;
+  }
+
+  //Change Hamburger Icon to White
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+    color: $white;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:active{
+    background-color: $black;
+  }
+  // Toggle Menu Icon (Hamburger when Collapsed and Cross when Open)
+  //Have removed this because it made the nav interaction to require 2 taps
+  .navbar-default  .navbar-default .navbar-toggle:focus {
+    background-color: $bg;
+    /*
+span.icon-bar:nth-child(2) {
+      transform: rotate(45deg) translateY(2px) translateX(2px);
+    }
+    span.icon-bar:nth-child(4) {
+      transform: rotate(-45deg) translateY(-2px) translateX(2px);
+    }
+    span.icon-bar:nth-child(3) {
+      display: none;
+    }*/
 
 
+  }
+  .navbar-default .navbar-toggle.collapsed:hover, .navbar-toggle:focus {
+    background-color: $bg;
+    /*
+span.icon-bar:nth-child(2) {
+      transform: rotate(0deg);
 
+    }
+    span.icon-bar:nth-child(4) {
+      transform: rotate(0deg);
+
+    }
+    span.icon-bar:nth-child(3) {
+      display: block;
+    }*/
+
+
+  }
+
+  a[href="javascript:history.back()"] {
+    margin: 12px;
+    width: 95%;
+    max-width: 100%;
+  }
 }

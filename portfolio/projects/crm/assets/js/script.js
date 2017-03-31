@@ -2,6 +2,7 @@ $(function() {
   var bodyCells, columnNames, headCells, rows, scripts, table, tableBody, tableHead, x, y;
   scripts = $('script');
   $('body').append(scripts);
+  $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
   table = $("table");
   table.attr("role", "grid");
   table.attr("aria-colcount", "7");
@@ -26,18 +27,22 @@ $(function() {
       y = 1;
     }
     $(this).attr("aria-colindex", y);
-    return y = y + 1;
+    y = y + 1;
+    if ($(this).attr('data-label') === "Active Project?") {
+      return $(this).children().each(function() {
+        if ($(this) === $("span")) {
+          return console.log("Pass!");;
+        }
+      });
+    }
   });
-  $("thead>tr").append($('<th class="linkHeader">View</th>'));
-  $("thead>tr").append($('<th class="linkHeader">Edit</th>'));
-  $("thead>tr").append($('<th class="linkHeader">Delete</th>'));
   columnNames = [];
   $('th').each(function() {
     return columnNames.push($(this).text());
   });
-  return $('tr').each(function() {
+  $('tr').each(function() {
     x = 0;
-    $(this).children().each(function() {
+    return $(this).children().each(function() {
       if (!$(this).text()) {
         if (columnNames[x] === 'Number') {
           $(this).text("-");
@@ -51,16 +56,46 @@ $(function() {
       }
       return x = x + 1;
     });
-    return $("a").each(function() {
-      if ($(this).text() === 'Show') {
-        return $(this).html('<span class="text-warning glyphicon glyphicon-eye-open" title=""></span> ');
-      } else if ($(this).text() === 'Edit') {
-        return $(this).html('<span class="text-warning glyphicon glyphicon-pencil" title=""></span> ');
-      } else if ($(this).text() === 'Destroy') {
-        return $(this).html('<span class="text-warning glyphicon glyphicon-trash" title=""></span> ');
-      } else if ($(this).text() === 'New Business' || $(this).text() === 'New Contact' || $(this).text() === 'New Project') {
-        return $(this).html('New  <span class="text-warning glyphicon glyphicon-edit" title=""></span>');
+  });
+  $('td').each(function() {
+    if ($(this).attr('data-label') === "Active project?") {
+      return $(this).children().each(function() {
+        if ($(this).is("span")) {
+          if ($(this).attr('class') === "text-danger glyphicon glyphicon-remove") {
+            return $(this).before('<p class="hidden">No</p>');
+          } else if ($(this).attr('class') === "text-success glyphicon glyphicon-ok") {
+            return $(this).before('<p class="hidden">Yes</p>');
+          }
+        }
+      });
+    }
+  });
+  $("a").each(function() {
+    if ($(this).text() === 'Show') {
+      return $(this).html('<p>View</p> <span class="text-warning glyphicon glyphicon-eye-open" title=""></span> ');
+    } else if ($(this).text() === 'Edit') {
+      $(this).html('<p>Edit</p> <span class="text-warning glyphicon glyphicon-pencil" title=""></span> ');
+      return $(this).attr("class", "tblButton");
+    } else if ($(this).text() === 'Destroy') {
+      return $(this).html('<p>Delete</p> <span class="text-warning glyphicon glyphicon-trash" title=""></span> ');
+    } else if ($(this).text() === 'New Business' || $(this).text() === 'New Contact' || $(this).text() === 'New Project') {
+      $(this).html('New  <span class="text-warning glyphicon glyphicon-edit" title=""></span>');
+      return $('h1').after(this);
+    }
+  });
+  $("p").each(function() {
+    if ($(this).attr('id') === 'notice') {
+      if ($(this).text().length > 0) {
+
+      } else {
+        return $(this).attr('class', 'hidden');
       }
-    });
+    }
+  });
+  return $("a").each(function() {
+    if ($(this).attr('href') === 'javascript:history.back()') {
+      $(this).html('<span class="text-warning glyphicon glyphicon-chevron-left" title=""></span> Back');
+      return $('.container').prepend($(this));
+    }
   });
 });
