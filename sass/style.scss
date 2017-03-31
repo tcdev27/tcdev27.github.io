@@ -492,6 +492,19 @@ article {
     }
   }
 }
+
+#contactContainer {
+
+}
+#contactForm {
+  font-size: 16pt;
+  label {
+    padding: 5px;
+  }
+  input, textarea {
+    font-size: 12pt;
+  }
+}
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
     /*  Structure  */
     $x: 1;
@@ -552,6 +565,46 @@ article {
     .description {
       padding: 0;
     }
+
+    //Styling for 'Coming Soon' Page
+
+    #comingSoon {
+      background-image: url("../img/comingSoon.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .maintenance {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $drkfaded;
+      padding: 5px;
+      aside {
+        text-align: center;
+      }
+    }
+
+    #offOn {
+      max-width: 75px;
+      max-height: 75px;
+      color: $white;
+      img {
+        width: 100%;
+      }
+    }
+
+    #popup {
+      background-color: $greyBlue;
+      border: 2px solid $white;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: center;
+      position: absolute;
+      bottom: 5%;
+      left: 0%;
+      width: 95%;
+      height: 33.33%;
+    }
 }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) { // Tablet
@@ -598,6 +651,8 @@ article {
   .project aside img {
     margin: 0;
   }
+
+
 }
 @media screen and (min-device-width: 68.75em) { //Desktop
 
@@ -651,4 +706,96 @@ article {
   .projectHeadImg img{
     width: 50%;
   }
+
+  //Styling for 'Coming Soon' Page
+
+  #comingSoon {
+    background-image: url("../img/comingSoon.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .maintenance {
+    background-color: $drkfaded;
+    padding: 5px;
+    aside {
+      text-align: center;
+    }
+  }
+
+  #offOn {
+    max-width: 75px;
+    max-height: 75px;
+    color: $white;
+    img {
+      width: 100%;
+    }
+  }
+
+  #popup {
+    background-color: $greyBlue;
+    border: 2px solid $white;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 33.3%;
+  }
+
+  //Project Page Box CSS
+
+  #buttons {
+    position: absolute;
+    bottom: 2%;
+
+  }
+
+  .box-container {
+    position: relative;
+
+  }
+  .box {
+    margin-top: 12px;
+    height: 100%;
+    width: 100%;
+  }
+  .box-side {
+    position: absolute;
+    //display: none;
+  }
+
+  //.showing {
+    //display: block;
+  //}
+
+  .start {
+    transform: translateX(3000px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .start.showing {
+    transform: translateX(0);
+  }
+
+  .middle {
+    transform: translateX(3000px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .middle.showing {
+    transform: translateX(0);
+  }
+
+  .end {
+    transform: translateX(3000px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .end.showing {
+    transform: translateX(0);
+  }
+
 }

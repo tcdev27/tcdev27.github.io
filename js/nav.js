@@ -47,5 +47,28 @@ jQuery(document).ready(function($){
         }
     }
 
+    // Code for 'On/Off' Button on 'Coming Soon' page
+    $('#offOn').on('click', function(){
+        $('#popup').toggleClass('hidden');
+    });
+    $('.refreshBtn').on('click', function() {
+      location.reload();
+    });
 
+    // Code for Project Page box
+    $('#start').on('click', function(){
+      $('.start').addClass('showing');
+      $('.middle').removeClass('showing');
+      $('.end').removeClass('showing');
+    });
+    $('#middle').on('click', function(){
+      $('.start').removeClass('showing');
+      $('.middle').addClass('showing');
+      $('.end').removeClass('showing');
+    });
+    $('#end').on('click', function(){
+      $('.start').removeClass('showing');
+      $('.middle').removeClass('showing');
+      $('.end').addClass('showing');
+    });
 });
