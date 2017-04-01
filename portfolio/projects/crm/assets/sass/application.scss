@@ -37,7 +37,7 @@
 
 // Colours Taken from CleverSteam Site
 $bg: #474e56; // Dark Background
-$ltbg: #d7d7d7; //Light Background
+$ltbg: #f5f5f5; //Light Background -- Passes WCAG AAA
 $beige: #CDA775;  //Beige
 
 //Colours Added for Accessibility
@@ -50,7 +50,6 @@ $black: #000;
 // Fonts
 $title: 'Roboto', sans-serif;
 $text: 'PT Serif', serif;
-// TODO: Clean UP!
 
 /**
  *
@@ -59,7 +58,7 @@ $text: 'PT Serif', serif;
  **/
 
  // All elements, round off borders and remove padding/margin. Helps counteract
- // any bootstrap default values (at this leve)
+ // any bootstrap default values (at this level)
 * {
   border-radius: 5px;
   margin: 0;
@@ -75,7 +74,11 @@ $text: 'PT Serif', serif;
 
 table {
     font-family: $text;  // Is this a good idea? Does not seem that readable.
+    font-size: 120%;
+}
 
+.table>tbody>tr>td {
+  vertical-align: middle;
 }
 
 h1, h2, h3 {
@@ -106,12 +109,11 @@ h1, h2, h3 {
 .navbar-default
 .navbar-brand {
     color: $white;
+    &:hover {
+      color: $beige;                                    // You can nest :selectors like this!
+    }
 }
 
-.navbar-default
-.navbar-brand:hover {
-    color: $beige;
-}
 
 .navbar-default
 .navbar-nav li a {
@@ -122,6 +124,9 @@ h1, h2, h3 {
 .navbar-default
 .navbar-nav li a:hover {
     color: $beige;
+    //text-decoration: underline;
+    //font-weight: bold;
+    font-size: 120%;
 }
 
 .navbar-nav>li>.dropdown-menu {
@@ -298,7 +303,7 @@ th {
 td, th {
     padding: 12px;
     text-align: left;
-    font-size: 110%;
+    //font-size: 110%;
 }
 
 
@@ -307,6 +312,22 @@ a[href="javascript:history.back()"] {
   @extend .btn-primary;
   margin: 12px;
   max-width: 15%;
+}
+
+form {
+  width: 100%;
+  text-align: center;
+  input {
+    width: 30%;
+    padding: 5px;
+    margin: 2px;
+    &[type="checkbox"] {
+      width: auto;
+    }
+    &[type="submit"] {
+      width: 15%;
+    }
+  }
 }
 
 
@@ -526,5 +547,20 @@ span.icon-bar:nth-child(2) {
     margin: 12px;
     width: 95%;
     max-width: 100%;
+  }
+  // Login Form Styling
+  form {
+    width: 100%;
+    input {
+      width: 80%;
+      border: 2px solid $bg;
+      &[type="submit"] {
+        width: 50%;
+      }
+    }
+    a {
+      border: 1px solid $bg;
+      margin: 5px;
+    }
   }
 }

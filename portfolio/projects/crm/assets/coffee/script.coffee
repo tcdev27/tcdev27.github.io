@@ -1,80 +1,101 @@
 $ ->
 
-  #Move Scripts Down to bottom of body
+  ###
+  -----------------------------------------------------------------------------
+      1 - General HTML Edits
+          - These Are a series of changes made to each page:
+          -- Script Tags Moved to Improve Loading.
+          -- Meta Tag Added to make bootstrap's Responsive structure work.
+          --
+  -----------------------------------------------------------------------------
+  ###
+  # Move Scripts Down
   scripts = $('script')
   $('body').append(scripts)
-  #$('link[href="assets/css/old-application.css"]').remove();
 
   #Add Meta Tag for Viewport
-  #This Causes Issues, but sets off in the right way of using the bootstrap mobile nav
-  $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
+  $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">')
 
+  ###
+  -----------------------------------------------------------------------------
+      2 - Accessibility Improvments
+          - These Are a series of changes made to improve the Accessibility of the Pages and their elements.
+           -- Aria Roles added to Tables.
+           --
+  -----------------------------------------------------------------------------
+  ###
+
+  # Select any Tables on the Page and Add Aria Attributes
   table = $ "table"
   table.attr "role", "grid"
-  table.attr "aria-colcount", "7"
+  table.attr "aria-colcount", "7" # Add Function for Finding ColCount?
 
+  # Select Table Headers on the Page and Add Aria Attributes
   tableHead = $ "thead"
   tableHead.attr "role", "rowgroup"
 
+  # Select the Table Body on the Page and Add Aria Attributes
   tableBody = $ "tbody"
   tableBody.attr "role", "rowgroup"
 
+  # Select any Table Rows on the Page and Add Aria Attributes
   rows = $ "tr"
   rows.attr "role", "row"
 
+  # Select any Column Headers on the Page and Add Aria Attributes
   headCells = $ "th"
   headCells.attr "role", "columnheader"
 
+  # Select any Table Cells on the Page and Add Aria Attributes
   bodyCells = $ "td"
   bodyCells.attr "role", "gridcell"
 
-  x = 1
-  $('th').each ->
+  # For Each Column Header, Apply an Incrementing Column Index
+  x = 0
+  headCells.each ->
+    x++
     $(@).attr "aria-colindex", x
-    x = x + 1
+  # Use x to set the Number of Columns in the Table for use with the Table Cells
+  noColumns = x
 
+  # For Each Table Cell, Apply an Incrementing Column Index
   y = 1
+  z = 0
   $('td').each ->
-    if y > 7
-      y = 1
+    if y > noColumns
+      z = z + 1
+      y = noColumns
+      if z == 3
+        z = 0
+        y = 1
     $(@).attr "aria-colindex", y
     y = y + 1
-  #Add 3 New Columns for the Table Links
-  #$("thead>tr").append $('<th class="linkHeader">View</th>')
-  #$("thead>tr").append $('<th class="linkHeader">Edit</th>')
-  #$("thead>tr").append $('<th class="linkHeader">Delete</th>')
-  #Store Column Names
 
-    #Add Text to the 'Active Project' Cells
-    if $(@).attr('data-label') == "Active Project?"
-      $(@).children().each ->
-        if $(@) == $("span")
-          `console.log("Pass!");`
-
+  # Create a List of Column Names for Use in Adding Data-Labels
   columnNames = []
   $('th').each ->
-    #If the Column is Empty, set the colspan attribute to null (Allows the new Columns to fit in)
-
     #Add the Column Name to the Column List
     columnNames.push($(@).text())
 
-
-
-  #Apply Column Names to Each Cell in Each Row
+  #Apply the Column Names to Each Cell in Each Row as Data Labels
   $('tr').each ->
     x = 0
+    # For Each Child Cell in Each Row
     $(@).children().each ->
-      #If the field is empty
-      if !$(@).text()
-        #Ignore Empty 'Active Project' as this is NOT Empty
-        if columnNames[x] == 'Number'
-          #Write '-' into the Empty Field
-          $(@).text("-") #This fills out the Number Column (stops it from collapsing)
+      # Set the Data-Label to the Relevant Column Name
       $(@).attr "data-label", columnNames[x]
+      # Check if the Child Cell Field is Empty
+      if !$(@).text()
+        # If the empty Field is for 'Number', Add a Placeholder '-'
+        if columnNames[x] == 'Number'
+          $(@).text("-")
+        # Adding the '-' Stops the Cell from Collapsing if empty which causes problems with page structure.
+      # When the Loop gets to the blank Column name (Meaning it is at the first of 3 Table Buttons) apply the appropriate class to each of them.
       if columnNames[x] == ''
         $(@).attr "class", "tblButton"
         ($(@).next()).attr "class", "tblButton"
         ($(@).next().next()).attr "class", "tblButton"
+      # Loop Back And Increment the Column Name Index
       x = x + 1
 
   #Now with Data labels included, use them to add hidden text to the 'Active Project' Cells for Screen Readers
@@ -85,35 +106,53 @@ $ ->
       $(@).children().each ->
         #Check that it is a span
         if $(@).is("span")
-          #Check which state it is in (Yes or No)
+          #Check which state it is in (Yes or No) and Add Appropriate Text
           if $(@).attr('class') == "text-danger glyphicon glyphicon-remove" #No
             $(@).before ('<p class="hidden">No</p>')
           else if $(@).attr('class') == "text-success glyphicon glyphicon-ok" #Yes
             $(@).before ('<p class="hidden">Yes</p>')
 
+  #Apply the Aria Role 'main' to the container div
+  container = $('div[class="container"]')
+  container.attr "role", "main"
 
-            #courtesy of http://allthingssmitty.com/2016/10/03/responsive-table-layout/
+  #Apply Aria Roles to Bootstrap's divs and other elements?
 
-  #Format Links on Pages to add Relevant Icons
+  ###
+  -----------------------------------------------------------------------------
+      3 - Usability Improvments
+          - These Are a series of changes made to improve the Usability of the Pages and their elements.
+           -- Adding Relevant Glyphicons to buttons and links.
+           -- Moving Elements to Better Positions
+           -- Removing Empty Elements that affect the Page Structure
+  -----------------------------------------------------------------------------
+  ###
+
+  #Add Appropriate Icons to Some of the Buttons and Links
+
+  # For Each Link, check it's text and determine if a suitable icon can be added
   $("a").each ->
+    # Show Button
     if $(@).text() == 'Show'
       $(@).html('<p>View</p> <span class="text-warning glyphicon glyphicon-eye-open" title=""></span> ')
+    # Edit Button
     else if $(@).text() == 'Edit'
       $(@).html('<p>Edit</p> <span class="text-warning glyphicon glyphicon-pencil" title=""></span> ')
       $(@).attr "class", "tblButton"
+    #Delete Button
     else if $(@).text() == 'Destroy'
       $(@).html('<p>Delete</p> <span class="text-warning glyphicon glyphicon-trash" title=""></span> ')
+    #'New' Button (On either of the pages)
     else if $(@).text() == 'New Business' || $(@).text() == 'New Contact' || $(@).text() == 'New Project'
-
       $(@).html('New  <span class="text-warning glyphicon glyphicon-edit" title=""></span>')
-      #Move the 'New ...' buttons to the top of the page making them easier to access
-      $('h1').after(@) #This now adds it AFTER the h1, as a lone link element
-      #$('body').html(@).after('h1')
+      #Move the 'New' button to the top of the page making it easier to access
+      $('h1').after(@)
+      #This now moves the new button to be just after the pages first h1 element.
 
 
-  #Check 'notice' p tag
+  #Check 'notice' p tag. If it is empty, remove it and prevent it from affecting the page's structure.
 
-  #Find the Element
+  #For Each p tag
   $("p").each ->
     #If it has an ID of 'notice'
     if $(@).attr('id') == 'notice'
@@ -124,8 +163,17 @@ $ ->
         #Otherwise, Hide it
         $(@).attr 'class', 'hidden'
 
-  # Move the Back Button on Indvidual view pages up to the top section
+  # Format and Move the Back Button on Indvidual view pages up to the top of the page
+
+  #For each link
   $("a").each ->
+    #if it is a 'back' button (based on href)
     if $(@).attr('href') == 'javascript:history.back()'
+      #Reformat it adding a chevron icon
       $(@).html('<span class="text-warning glyphicon glyphicon-chevron-left" title=""></span> Back')
+      #Move it to be above the page content container
       $('.container').prepend ($(@))
+    # if it is either a 'Sign up' or 'Forgot Password' link
+    if $(@).text() == 'Sign up' || $(@).text() == 'Forgot your password?'
+      #Move it up to be part of the form it is connected to
+      $('form').append(@)

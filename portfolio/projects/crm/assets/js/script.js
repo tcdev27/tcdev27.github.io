@@ -1,8 +1,27 @@
 $(function() {
-  var bodyCells, columnNames, headCells, rows, scripts, table, tableBody, tableHead, x, y;
+
+  /*
+  -----------------------------------------------------------------------------
+      1 - General HTML Edits
+          - These Are a series of changes made to each page:
+          -- Script Tags Moved to Improve Loading.
+          -- Meta Tag Added to make bootstrap's Responsive structure work.
+          --
+  -----------------------------------------------------------------------------
+   */
+  var bodyCells, columnNames, container, headCells, noColumns, rows, scripts, table, tableBody, tableHead, x, y, z;
   scripts = $('script');
   $('body').append(scripts);
   $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
+
+  /*
+  -----------------------------------------------------------------------------
+      2 - Accessibility Improvments
+          - These Are a series of changes made to improve the Accessibility of the Pages and their elements.
+           -- Aria Roles added to Tables.
+           --
+  -----------------------------------------------------------------------------
+   */
   table = $("table");
   table.attr("role", "grid");
   table.attr("aria-colcount", "7");
@@ -16,25 +35,25 @@ $(function() {
   headCells.attr("role", "columnheader");
   bodyCells = $("td");
   bodyCells.attr("role", "gridcell");
-  x = 1;
-  $('th').each(function() {
-    $(this).attr("aria-colindex", x);
-    return x = x + 1;
+  x = 0;
+  headCells.each(function() {
+    x++;
+    return $(this).attr("aria-colindex", x);
   });
+  noColumns = x;
   y = 1;
+  z = 0;
   $('td').each(function() {
-    if (y > 7) {
-      y = 1;
+    if (y > noColumns) {
+      z = z + 1;
+      y = noColumns;
+      if (z === 3) {
+        z = 0;
+        y = 1;
+      }
     }
     $(this).attr("aria-colindex", y);
-    y = y + 1;
-    if ($(this).attr('data-label') === "Active Project?") {
-      return $(this).children().each(function() {
-        if ($(this) === $("span")) {
-          return console.log("Pass!");;
-        }
-      });
-    }
+    return y = y + 1;
   });
   columnNames = [];
   $('th').each(function() {
@@ -43,12 +62,12 @@ $(function() {
   $('tr').each(function() {
     x = 0;
     return $(this).children().each(function() {
+      $(this).attr("data-label", columnNames[x]);
       if (!$(this).text()) {
         if (columnNames[x] === 'Number') {
           $(this).text("-");
         }
       }
-      $(this).attr("data-label", columnNames[x]);
       if (columnNames[x] === '') {
         $(this).attr("class", "tblButton");
         ($(this).next()).attr("class", "tblButton");
@@ -70,6 +89,18 @@ $(function() {
       });
     }
   });
+  container = $('div[class="container"]');
+  container.attr("role", "main");
+
+  /*
+  -----------------------------------------------------------------------------
+      3 - Usability Improvments
+          - These Are a series of changes made to improve the Usability of the Pages and their elements.
+           -- Adding Relevant Glyphicons to buttons and links.
+           -- Moving Elements to Better Positions
+           -- Removing Empty Elements that affect the Page Structure
+  -----------------------------------------------------------------------------
+   */
   $("a").each(function() {
     if ($(this).text() === 'Show') {
       return $(this).html('<p>View</p> <span class="text-warning glyphicon glyphicon-eye-open" title=""></span> ');
@@ -95,7 +126,10 @@ $(function() {
   return $("a").each(function() {
     if ($(this).attr('href') === 'javascript:history.back()') {
       $(this).html('<span class="text-warning glyphicon glyphicon-chevron-left" title=""></span> Back');
-      return $('.container').prepend($(this));
+      $('.container').prepend($(this));
+    }
+    if ($(this).text() === 'Sign up' || $(this).text() === 'Forgot your password?') {
+      return $('form').append(this);
     }
   });
 });
