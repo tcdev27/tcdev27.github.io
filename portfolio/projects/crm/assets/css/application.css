@@ -361,6 +361,7 @@ span.icon-bar:nth-child(2) {
     width: 95%;
     max-width: 100%; }
   form {
+    font-size: 130%;
     width: 100%; }
     form input {
       width: 80%;
