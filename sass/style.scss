@@ -284,6 +284,10 @@ section#cover {
   padding: 5px;
 }
 
+a {
+  color: $ltBlue;
+}
+
 header {
   h1 {
     padding-left: 10%;
@@ -505,6 +509,22 @@ figure {
   border-radius: 5px;
 }
 
+.screenshot-mobile {
+  @extend .screenshot;
+  width: 20%;
+  position: absolute;
+  top: 30%;
+  right: 80%;
+}
+
+.screenshot-tablet {
+  @extend .screenshot;
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  right: 50%;
+}
+
 .icons-small {
   img {
     width: 10%;
@@ -696,6 +716,14 @@ article {
       width: 25%;
       margin: 5px;
     }
+  }
+  .screenshot-mobile {
+    top: 56%;
+    right: 80%;
+  }
+  .screenshot-tablet {
+    top: 62%;
+    right: 50%;
   }
 }
 

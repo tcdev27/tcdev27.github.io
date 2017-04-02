@@ -1,18 +1,6 @@
 /**
  *
- *      Style Analysis:
- *
- *          - White Text.
- *          - Titles in Big Capitals Sans Serif.
- *          - Rest of text in serif.
- *          - Text Colour is #474e56 on white bg.
- *              - Same colour is used as dark background.
- *          - Some Areas use $beige.
- *          - Links on white bg are #c99e67.
- *          - Buttons change upon hover, either start with white fill
- *            and dark colour^^ border & text. OR vice-versa.
- *
- *          Notes: Need to look at aria roles and change the focus styling
+ *      CRM Styling - Copyright Tom Chadwick 2017
  *
  **/
 
@@ -35,7 +23,7 @@
 
 // Colours
 
-// Colours Taken from CleverSteam Site
+// Colours Taken from Client Site
 $bg: #474e56; // Dark Background
 $ltbg: #f5f5f5; //Light Background -- Passes WCAG AAA
 $beige: #CDA775;  //Beige
@@ -53,35 +41,51 @@ $text: 'PT Serif', serif;
 
 /**
  *
- *      [3] - Styling
+ *      [3] - Global Styling
  *
  **/
 
- // All elements, round off borders and remove padding/margin. Helps counteract
- // any bootstrap default values (at this level)
+ // Round off borders of all elements
 * {
   border-radius: 5px;
-  margin: 0;
-  padding: 0;
-
 }
 
+// Widen the Container
 .container {
   margin-right: 5%;
   margin-left: 5%;
   width: 90%;
 }
 
+// Table Styling
 table {
-    font-family: $text;  // Is this a good idea? Does not seem that readable.
+    font-family: $text;
     font-size: 120%;
-    //border: 1px solid $bg;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .table>tbody>tr>td {
   vertical-align: middle;
   border-bottom: 2px solid $borderBeige;
 }
+
+// 'Zebra Stripe' for Rows
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+th {
+  background: $bg;
+  color: white;
+  font-weight: bold;
+  border-radius: 0;
+}
+td, th {
+    padding: 12px;
+    text-align: left;
+}
+
+// Headings
 
 h1, h2, h3 {
     font-family: $title;
@@ -96,10 +100,9 @@ h1, h2, h3 {
     border-top-right-radius: 0;
     text-align: center;
     padding: 32px;
-    //text-transform: uppercase; -- Makes it more like their site...is this necessary?
 }
 
-
+// Navigation Styling
 .navbar {
     background-color: $bg;
     font-family: $title;
@@ -112,7 +115,7 @@ h1, h2, h3 {
 .navbar-brand {
     color: $white;
     &:hover {
-      color: $beige;                                    // You can nest :selectors like this!
+      color: $beige;
     }
 }
 
@@ -126,8 +129,6 @@ h1, h2, h3 {
 .navbar-default
 .navbar-nav li a:hover {
     color: $beige;
-    //text-decoration: underline;
-    //font-weight: bold;
     font-size: 120%;
 }
 
@@ -145,15 +146,13 @@ h1, h2, h3 {
     color: $bg;
 }
 
-
+//Button and Link Styling
 
 .btn-primary {
     background-color: transparent;
     width: 30%;
     font-size: 150%;
     padding: 12px;
-    //transform: translateX(-50%);
-    //border: 2px solid $bg;
     color: $bg;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -197,19 +196,16 @@ h1, h2, h3 {
 
 a {
     padding: 12px;
-    //margin: 1em;
     background-color: transparent;
     color: $textBeige;
     border-radius: 8px;
     font-family: $title;
-    //padding-bottom: 0;
     display: inline-block;
     text-align: center;
     cursor: pointer;
 }
 
 a:hover {
-    //border-bottom: 4px solid $bg;
     background-color: $bg;
     color: $white;
     text-decoration: none;
@@ -218,18 +214,10 @@ a:hover {
     }
 }
 
-  /*
-  table tr:hover {
-    border-left: 4px solid $bg;
-    border-right: 4px solid $bg;
-  }*/
-
-
-
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background-color: $bg;
 }
-
+// Use Same Styling of Main Buttons for the Login Button
 input[type=submit] {
     @extend .btn-primary;
 }
@@ -290,42 +278,15 @@ input[type=submit] {
 }
 
 
-.list-group-item a {
-  //text-decoration: underline;
-  //border-radius: 0;
-}
-
-
-
-//Responsive Table
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-/* Zebra striping */
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #fff;
-}
-th {
-  background: $bg;
-  color: white;
-  font-weight: bold;
-  border-radius: 0; //Counteract the top rule for * all
-}
-td, th {
-    padding: 12px;
-    text-align: left;
-    //font-size: 110%;
-}
-
-
-
+// 'Back' Button Styling
 a[href="javascript:history.back()"] {
   @extend .btn-primary;
   margin: 12px;
   max-width: 15%;
 }
 
+
+// Login Form Styling
 form {
   width: 100%;
   text-align: center;
@@ -344,45 +305,56 @@ form {
 }
 
 
+/**
+ *
+ *      [4] - Mobile Styling
+ *
+ **/
+
+@media screen and (max-device-width: 43em) {  //Mobile
+
+  // Apply a Padding which prevents mobile navigation from covering content
+  html {
+    padding-bottom: 75px;
+  }
+
+  // Remove space around headings
+  h1, h2, h3 {
+    margin-top: 0;
+  }
 
 
-@media screen and (max-device-width: 43em) {                                       //Mobile
-
-    html {
-      //font-size: 20pt;
-      padding-bottom: 75px; //THIS DID NOT WORK ON ACTUAL DEVICE
-    }
-
-    h1, h2, h3 {
-      margin-top: 0;
-    }
+  // Responsive Table -- Adapted fromhttp://allthingssmitty.com/2016/10/03/responsive-table-layout/
 
 
-    // Responsive Table
-    //Adapted fromhttp://allthingssmitty.com/2016/10/03/responsive-table-layout/
+  /*
 
-    .container {
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    table {
-        font-size: 18pt;
-        margin-top: 60px;
-        table-layout:fixed
-    }
+      This will hide the table headers and make the rows act as columns with field labels. This structure makes the tables and their content fit on a mobile device better.
 
-    .glyphicon {
-        font-size: 30px;
-        vertical-align: middle;
-    }
 
-    table thead {
+  */
+
+  .container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+  table {
+      font-size: 18pt;
+      margin-top: 60px;
+      table-layout:fixed
+  }
+  // Center and Increase size of Icons
+  .glyphicon {
+      font-size: 30px;
+      vertical-align: middle;
+  }
+
+  table thead {
     border: none;
     height: 1px;
-    //margin: -1px;
     overflow: hidden;
     position: absolute;
     width: 1px;
@@ -390,8 +362,6 @@ form {
 
   table tr {
     display: block;
-    //border-top: 5px solid $beige;
-    //border: 1px solid $bg;
     border: none;
   }
 
@@ -407,6 +377,9 @@ form {
       font-size: 100%;
   }
 
+  .table>tbody>tr>td {
+    border: none;
+  }
 
   table td:before {
     content: attr(data-label);
@@ -415,8 +388,6 @@ form {
     width: 100%;
     background-color: $bg;
     color: $white;
-    //border-bottom: 5px solid $bg;
-    //color: $bg;
     font-family: $title;
     padding-left: 4px;
   }
@@ -424,20 +395,18 @@ form {
     padding: 0;
   }
 
+  // Styling for Buttons in the Tables
   .tblButton {
     width: 33.333%;
     text-align: center;
     float: left;
   }
 
-  .table>tbody>tr>td {
-    border: none;
-  }
 
   table tbody tr td.tblButton {
     padding-top: 0px;
     padding-bottom: 50px;
-    border-bottom: 8px solid $borderBeige;
+    border-bottom: 4px solid $textBeige;
     border-radius: 0;
     a {
       border-bottom: 4px solid $black;
@@ -450,38 +419,21 @@ form {
     }
   }
 
-  .tblButton {
-    border-bottom: 4px solid $textBeige;
-  }
-
+  // Styling for Links on the Individual View Pages
   .container .btn, .panel-body a {
-      //position: absolute;
-      //top: 15%;
-      //right: 2%;
       font-size: 16pt;
-      //background-color: transparent;
-      //border-left: none;
-      //border-right: 8px solid $bg;
-      //border-bottom: 8px solid $bg;
-      //border-top: none;
       color: $bg;
-
   }
   .container a.btn:active, .panel-default a:active {
-      //border-right: none;
-      //border-left: 8px solid $bg;
-      //border-top: 8px solid $bg;
-      //border-bottom: none;
       background-color: $bg;
       color: $white;
       .text-warning {
         color: $white;
       }
-
   }
 
 
-  //Mobile Nav
+  //Mobile Navigation Styling, This Takes the Bootstrap design and moves it down to the bottom and restyles it.
 
   .navbar {
     font-size: 24pt;
@@ -521,41 +473,15 @@ form {
   .navbar-default .navbar-nav .open .dropdown-menu>li>a:active{
     background-color: $black;
   }
-  // Toggle Menu Icon (Hamburger when Collapsed and Cross when Open)
-  //Have removed this because it made the nav interaction to require 2 taps
+  // Toggle Menu Icon (Hamburger when Collapsed and Cross when Open). Removed this because it made the nav interaction to require 2 taps
   .navbar-default  .navbar-default .navbar-toggle:focus {
     background-color: $bg;
-    /*
-span.icon-bar:nth-child(2) {
-      transform: rotate(45deg) translateY(2px) translateX(2px);
-    }
-    span.icon-bar:nth-child(4) {
-      transform: rotate(-45deg) translateY(-2px) translateX(2px);
-    }
-    span.icon-bar:nth-child(3) {
-      display: none;
-    }*/
-
-
   }
   .navbar-default .navbar-toggle.collapsed:hover, .navbar-toggle:focus {
     background-color: $bg;
-    /*
-span.icon-bar:nth-child(2) {
-      transform: rotate(0deg);
-
-    }
-    span.icon-bar:nth-child(4) {
-      transform: rotate(0deg);
-
-    }
-    span.icon-bar:nth-child(3) {
-      display: block;
-    }*/
-
-
   }
 
+  // Back Button Styling
   a[href="javascript:history.back()"] {
     margin: 12px;
     width: 95%;

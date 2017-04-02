@@ -260,6 +260,9 @@ section#cover {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 5px; }
 
+a {
+  color: #88bff9; }
+
 header h1 {
   padding-left: 10%; }
 
@@ -443,8 +446,20 @@ figure {
 .tick {
   width: 5%; }
 
-.screenshot {
+.screenshot, .screenshot-mobile, .screenshot-tablet {
   border-radius: 5px; }
+
+.screenshot-mobile {
+  width: 20%;
+  position: absolute;
+  top: 30%;
+  right: 80%; }
+
+.screenshot-tablet {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  right: 50%; }
 
 .icons-small img {
   width: 10%;
@@ -592,7 +607,13 @@ article {
     width: 6%; }
   .icons-small img {
     width: 25%;
-    margin: 5px; } }
+    margin: 5px; }
+  .screenshot-mobile {
+    top: 56%;
+    right: 80%; }
+  .screenshot-tablet {
+    top: 62%;
+    right: 50%; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {

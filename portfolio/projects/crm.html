@@ -7,23 +7,6 @@
     <title>Tom Chadwick</title>
     <link rel="stylesheet" href="../../css/style.css"/>
 </head>
-<body class="row">
-    <header class="content column small-12 large-12">
-      <h1 class="column small-10 large-10">Cleversteam: CRM</h1>
-      <aside class="projectHeadImg column small-2 large-2">
-        <img src="../../img/projects/crmLogo.png" alt="Usability Testing Image">
-      </aside>
-    </header>
-    <article class="column small-12 large-12">
-      <section class=" description column small-12 large-12">
-        <p>Description</p>
-      </section>
-      <aside class="column small-12 large-12">
-        <a href="crm/Businesses.html" target="_blank"><button>View Live Demo</button></a>
-        <a href="https://bitbucket.org/t_chadwick/crm_public/src" target="_blank"><button>See the Code</button></a>
-      </aside>
-    </article>
-</body>
 <div id="cd-nav">
     <a href="#" class="cd-nav-trigger">Menu<span></span></a>
     <nav id="cd-main-nav" class="column small-12 large-12">
@@ -37,6 +20,61 @@
         </ul>
     </nav>
 </div>
+<body class="row">
+    <header class="content column small-12 large-12">
+      <h1 class="column small-10 large-10">Cleversteam: CRM</h1>
+      <aside class="projectHeadImg column small-2 large-2">
+        <img src="../../img/projects/crmLogo.png" alt="Usability Testing Image">
+      </aside>
+    </header>
+    <article class="column small-12 large-12">
+      <section class=" description column small-12 large-12">
+        <p class="column small-12 large-12">Another Project I have worked on at university is a redesign of a protoype CRM system built by a web development company in liverpool. The front-end of the system utilises <a target="_blank" href="http://getbootstrap.com/">bootstrap</a> but the client wants a new design that is more usable and unique.</p>
+        <figure class="column small-12 large-12">
+          <figcaption>
+            The Original Design
+          </figcaption>
+          <img class="screenshot" src="../../img/screens/crm_screenshot_1.png" alt="Original CRM Design Sample 1">
+        </figure>
+        <h1 class="column small-12 large-12">The Requirements:</h1>
+        <p class="column small-12 large-12">The redesign for this CRM needed to tick all of the following:</p>
+        <ul class="tick_list column small-12 large-12">
+          <li><img class="tick"src="../../img/tick.png" alt="Tick Symbol"> More Unique & Aesthetically Appealing UI.</li>
+          <li><img class="tick"src="../../img/tick.png" alt="Tick Symbol"> Improved Usability.</li>
+          <li><img class="tick"src="../../img/tick.png" alt="Tick Symbol"> Better Accessibilty.</li>
+          <li><img class="tick"src="../../img/tick.png" alt="Tick Symbol"> Responsive Design for Desktop, Tablet & Mobile.</li>
+          <li><img class="tick"src="../../img/tick.png" alt="Tick Symbol"> No Direct HTML changes, just SASS(css) and CoffeeScript(js).</li>
+        </ul>
+        <figure class="column small-12 large-12">
+          <figcaption>
+            The New Design
+          </figcaption>
+          <img class="screenshot" src="../../img/screens/crm_screenshot_2.png" alt="New CRM Design Sample 1">
+          <img class="screenshot-tablet " src="../../img/screens/crm_screenshot_6_1.png" alt="New CRM Design Tablet Sample 1">
+          <img class="screenshot-mobile " src="../../img/screens/crm_screenshot_5_1.png" alt="New CRM Design Mobile Sample 1">
+        </figure>
+        <p class="column small-12 large-12">The CRM now boasts a colour scheme and font-style set that sits closer to that of the client's. On top of this the content is now readable and the interface is usable on both Tablet and Mobile.</p>
+        <p>Some of the elements within the system were not very accessible so part of the script now adds ARIA Roles <a href="https://www.w3.org/TR/WCAG20-TECHS/aria">(WCAG Guidelines)</a> which make the content compatible with screen readers. In addition all colours used were checked using the <a href="http://webaim.org/resources/contrastchecker/">WebAim Contrast Checker</a> to ensure a suitable contrast ratio that makes elements visible to those with visual impairments.</p>
+        <p>In keeping with the client's wishes the HTML of the pages need no direct editing. Instead the provided script will edit it for them.</p>
+        <h1 class="column small-12 large-12">Methods & Technologies</h1>
+        <p class="column small-12 large-12">The Development for this project followed an agile methodology. With a series of small sprints each of which involving the coding to fulfill a selection of the product backlog.</p>
+        <p class="column small-12 large-12">Each iteration involved design(rough sketching), coding and then testing. The end of which sometimes resulted in the addition of new features to the list.</p>
+        <p class="column small-12 large-12">The development was done using the Pre-processors Sass and CoffeeScript which provide efficient CSS and JavaScript coding respectively. The two were compiled into their corresponding languages using Gulp.</p>
+        <figure class="icons-small column small-12 large-12">
+          <img src="../../img/logo/sassLogo.png" alt="Sass Logo">
+          <img src="../../img/logo/coffeescriptLogo_2.png" alt="CoffeeScript Logo"><img src="../../img/logo/gulpLogo.png" alt="Gulp Logo">
+        </figure>
+        <h1 class="column small-12 large-12">Conclusion</h1>
+        <p class="column small-12 large-12">The end result of this project is the combination of Styling and Scripting which builds upon the bootstrap framework to create a custom design.</p>
+        <p>In review, working on top of bootstrap added complexity to the styling that could of been avoided if it had been removed. The removal of it would of also freed up the design to incorporate more creative features.</p>
+        <p>That said, this build still works perfectly and meets the client's requirements of improving the CRM.</p>
+      </section>
+      <aside class="column small-12 large-12 endButtons">
+        <a href="crm/Businesses.html" target="_blank"><button>View Live Demo</button></a>
+        <a href="https://bitbucket.org/t_chadwick/crm_public/src" target="_blank"><button>See the Code</button></a>
+      </aside>
+    </article>
+</body>
 
 <script
   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
