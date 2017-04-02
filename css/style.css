@@ -267,19 +267,16 @@ button {
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
   border-radius: 5px;
-  font-size: 18pt;
+  font-size: 20pt;
   padding: 8px;
   transition: ease;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; }
 
 button:active {
   border: none;
   transform: translateY(4px); }
-
-button {
-  cursor: pointer;
-  position: relative;
-  overflow: hidden; }
 
 /* Ripple Effect On Click  Adapted from https://codepen.io/lehollandaisvolant/pen/dMQXYX */
 button:after {
@@ -391,7 +388,7 @@ a:focus:not(:active)::after {
 .status {
   font-family: "Shadows Into Light";
   font-weight: bold;
-  font-size: 16pt;
+  font-size: 18pt;
   padding: 0;
   margin: 0;
   text-align: right; }
