@@ -16,10 +16,11 @@ document.head.innerHTML += '<link href="https://fonts.googleapis.com/css?family=
 
   1 - Append the Form:
       - Add the URI Generator Form to the bottom  of the page.
+      -- From here the User can fill in the required fields and create a uri    that they can then copy & paste.
 
 */
 
-// Defined some Variable for Output Styling and Particular Elements
+// Defined some Variables for Output Styling and Particular Elements
 var outputStyle = "font-family: 'Roboto'; padding: 20px; color: #fff; background-color: #474e56; border-radius: 5px; font-size: 16pt; max-width: 750px;";
 var inputStyle = 'width: 95%; padding: 5px; font-size: 75%;'
 var btnStyle = 'color: #000; border: #000; padding: 12px; margin: 12px; font-size: 100%; border-radius: 5px;'
@@ -41,8 +42,8 @@ outputStyle +
 /*
 
   2 - Generation Function:
-      - Called by the Submission of a form that includes the 3 required fields.
-      - It Validates the Data Submitted and if it passes it then creates a uri to output
+      - Called by the Submission of the Generator Form.
+      - It Validates the Data Submitted and if it passes it then creates a uri to output.
 
 */
 function genURI() {
@@ -50,7 +51,7 @@ function genURI() {
   var check = document.getElementById('output');
   // If there is NOT Already a URI Output
   if(!check) {
-    // Select Each Field Based on their Names and get the Values <--- This will require the page to have the correct names for each field.
+    // Select Each Field Based on their Names and get the Values
     programmeID = +document.querySelector("input[name='programme_id']").value;
     channelID = +document.querySelector("input[name='channel_id']").value;
     redirectTo = document.querySelector("input[name='redirect_to']").value;
@@ -78,7 +79,7 @@ function genURI() {
       - Called upon by genURI() function.
       - Runs through the provided data and ensures the following:
         -- All 3 input values have been provided.
-        -- Both Programmed ID and and Channel ID are integers (Positive).
+        -- Both Programme ID and and Channel ID are integers (Positive).
       - As it runs any errors found are compiled within a 'messages' variable.
       - If it gets to the end of function and the messages variable is empty it will return 'true' and confirm that the data is valid.
       - If any errors have been found they will be returned instead so that the UI can notify the user of them and allow them to fix it.
@@ -121,8 +122,6 @@ function validate(programmeID, channelID, redirectTo) {
   } else {
     messages.push('Please Enter a Redirect Path.');
   }
-
-
 
   // if any errors found, return them instead
   if (messages.length> 0) {
@@ -179,7 +178,8 @@ function outputURI(programmeID, channelID, redirectTo) {
 /*
 
   6 - Output Errors:
-      - ...
+      - If any errors are found during Validation, this function is called.
+      - It will take the collected error messages and output them to the page for the user to see.
 
 */
 
@@ -191,7 +191,7 @@ function outputErrors(result) {
     //console.log(result);
 
     // Styling Variables
-    var errorStyle = "font-family: 'Roboto'; padding: 2%; margin-bottom: 5px; color: #fff; background-color: #be2a2a; border-radius: 5px; font-size: 14pt;";
+    var errorStyle = "font-family: 'Roboto'; padding: 20px; margin-bottom: 5px; color: #fff; background-color: #be2a2a; border-radius: 5px; font-size: 14pt; max-width: 750px;";
 
     // Output Error Container
     document.body.innerHTML += '<div id="error" style="' + errorStyle + '"><h1>Error</h1></div>'
