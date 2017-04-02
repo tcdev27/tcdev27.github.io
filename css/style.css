@@ -387,17 +387,20 @@ a:focus:not(:active)::after {
     border-radius: 5px; }
   .project button {
     font-size: 100%; }
-  .project .status {
-    font-family: "Shadows Into Light";
-    font-weight: bold;
-    font-size: 16pt;
-    padding: 0;
-    margin: 0;
-    text-align: right; }
-  .project .complete {
-    color: #18a800; }
-  .project .incomplete {
-    color: #e78a00; }
+
+.status {
+  font-family: "Shadows Into Light";
+  font-weight: bold;
+  font-size: 16pt;
+  padding: 0;
+  margin: 0;
+  text-align: right; }
+
+.complete {
+  color: #18a800; }
+
+.incomplete {
+  color: #e78a00; }
 
 .projectHeadImg img {
   width: 100%;

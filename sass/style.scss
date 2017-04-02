@@ -434,21 +434,23 @@ a:focus:not(:active)::after {
   button {
     font-size: 100%;
   }
-  .status {
-    font-family: $sketch;
-    font-weight: bold;
-    font-size: 16pt;
-    padding: 0;
-    margin: 0;
-    text-align: right;
-  }
-  .complete {
-    color: $green;
-  }
-  .incomplete {
-    color: $orange;
-  }
 }
+
+.status {
+  font-family: $sketch;
+  font-weight: bold;
+  font-size: 16pt;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.complete {
+  color: $green;
+}
+.incomplete {
+  color: $orange;
+}
+
 .projectHeadImg img{
   width: 100%;
   border-radius: 5px;
