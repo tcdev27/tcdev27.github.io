@@ -75,10 +75,12 @@ $text: 'PT Serif', serif;
 table {
     font-family: $text;  // Is this a good idea? Does not seem that readable.
     font-size: 120%;
+    //border: 1px solid $bg;
 }
 
 .table>tbody>tr>td {
   vertical-align: middle;
+  border-bottom: 2px solid $borderBeige;
 }
 
 h1, h2, h3 {
@@ -235,6 +237,18 @@ input[type=submit] {
 
 // Indvidual View Pages
 
+.panel {
+  border: none;
+}
+
+.panel-body, .list-group {
+  border-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 4px solid $borderBeige;
+  border-top: none;
+}
+
 .panel-default>.panel-heading {
   background-color: $bg;
   color: $white;
@@ -242,10 +256,13 @@ input[type=submit] {
 
 .panel-heading {
   background-color: $bg;
+  border-radius: 0;
+  border: none;
 }
 
 .list-group-item {
   background-color: $ltbg;
+  border: 2px solid $borderBeige;
 }
 .list-group-item:nth-child(odd) {
   background-color: $white;
@@ -274,7 +291,7 @@ input[type=submit] {
 
 
 .list-group-item a {
-  text-decoration: underline;
+  //text-decoration: underline;
   //border-radius: 0;
 }
 
