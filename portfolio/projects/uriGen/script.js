@@ -9,6 +9,9 @@ var programmeID;
 var channelID;
 var redirectTo;
 
+// Output Preparation - Font Import
+document.head.innerHTML += '<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">'
+
 /*
 
   1 - Generation Function:
@@ -116,7 +119,9 @@ function copyUri() {
   var output = document.getElementById('hiddenUri');
   output.select();
   document.execCommand('copy');
-  // Add bit here that shows confirmation of copying to clipboard
+  // Change Button Text to 'Copied!' as confirmation
+  var button = document.getElementById('copyBtn');
+  button.innerHTML = "Copied!"
 }
 
 /*
@@ -134,14 +139,14 @@ function outputURI(programmeID, channelID, redirectTo) {
   //document.getElementById("output").innerHTML = uri;
 
   // Defined some Variable for Output Styling
-  var outputStyle = 'padding: 2.5%; color: #fff; background-color: #474e56; border-radius: 5px; font-size: 16pt;';
-  var btnStyle = 'color: #474e56;'
-  var copyBtn = '<button type="button" onclick="copyUri()" style="' + btnStyle + '">Copy to Clipboard</button>'
-  var resetBtn = '<button type="button" onclick="resetGen()" style="' + btnStyle + '">Reset</button>'
+  var outputStyle = "font-family: 'Roboto'; padding: 2.5%; color: #fff; background-color: #474e56; border-radius: 5px; font-size: 16pt;";
+  var btnStyle = 'color: #000; border: #000; margin: 2px; font-size: 100%;'
+  var copyBtn = '<button id="copyBtn" type="button" onclick="copyUri()" style="' + btnStyle + 'background-color: #89b247;">Copy to Clipboard</button>'
+  var resetBtn = '<button type="button" onclick="resetGen()" style="' + btnStyle + 'color: #fff; background-color: #ef4a4a;">Reset</button>'
 
   // Add the Output to the Page
   document.body.innerHTML +=
-  '<div width="100%" style="'+ outputStyle +'" id="output">' + '<h1 style="font-size: 125%">URI: </h1>' + '<p id="uri">' + uri + '</p>' + copyBtn + '<textarea id="hiddenUri" style="position: absolute; top: -100%">' + uri +'</textarea>' + resetBtn + '</div>';
+  '<div width="100%" style="'+ outputStyle +'" id="output">' + '<h1 style="font-size: 125%">URI: </h1>' + '<p id="uri" style="background-color: #fff; color: #000; border-radius: 5px; padding: 2px; border: 2px solid #000;">' + uri + '</p>' + copyBtn + '<textarea id="hiddenUri" style="position: absolute; top: -100%">' + uri +'</textarea>' + resetBtn + '</div>';
 
   // Remove Error Output if one exists
   var error = document.getElementById('error');
@@ -166,7 +171,7 @@ function outputErrors(result) {
     //console.log(result);
 
     // Styling Variables
-    var errorStyle = 'padding: 2%; margin-bottom: 5px; color: #fff; background-color: #d02121; border-radius: 5px; font-size: 14pt;';
+    var errorStyle = "font-family: 'Roboto'; padding: 2%; margin-bottom: 5px; color: #fff; background-color: #d02121; border-radius: 5px; font-size: 14pt;";
 
     // Output Error Container
     document.body.innerHTML += '<div id="error" style="' + errorStyle + '"><h1>Error</h1></div>'
