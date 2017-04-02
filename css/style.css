@@ -403,6 +403,26 @@ a:focus:not(:active)::after {
   width: 100%;
   border-radius: 5px; }
 
+figure {
+  text-align: center;
+  position: relative;
+  margin: 0;
+  padding: 0; }
+  figure figcaption {
+    width: 100%;
+    font-family: "Architects Daughter";
+    color: #88bff9;
+    position: absolute;
+    bottom: 0;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #248cfa;
+    margin: 0; }
+
+.screenshot {
+  border-radius: 5px; }
+
 article {
   border-left: 2px solid #000;
   border-right: 2px solid #000;

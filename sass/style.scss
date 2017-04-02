@@ -454,6 +454,28 @@ a:focus:not(:active)::after {
   border-radius: 5px;
 }
 
+figure {
+  text-align: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  figcaption {
+    width: 100%;
+    font-family: $note;
+    color: $ltBlue;
+    position: absolute;
+    bottom: 0;
+    background-color: $black;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid $blue;
+    margin: 0;
+  }
+}
+.screenshot {
+  border-radius: 5px;
+}
+
 article {
   border-left: 2px solid $black;
   border-right: 2px solid $black;

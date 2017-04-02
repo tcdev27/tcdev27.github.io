@@ -14,7 +14,33 @@ document.head.innerHTML += '<link href="https://fonts.googleapis.com/css?family=
 
 /*
 
-  1 - Generation Function:
+  1 - Append the Form:
+      - Add the URI Generator Form to the bottom  of the page.
+
+*/
+
+// Defined some Variable for Output Styling and Particular Elements
+var outputStyle = "font-family: 'Roboto'; padding: 20px; color: #fff; background-color: #474e56; border-radius: 5px; font-size: 16pt; max-width: 750px;";
+var inputStyle = 'width: 95%; padding: 5px; font-size: 75%;'
+var btnStyle = 'color: #000; border: #000; padding: 12px; margin: 12px; font-size: 100%; border-radius: 5px;'
+var submitBtn = '<button style="'+ btnStyle +'background-color: #89b247;" type="button" onclick="genURI()" class="btn btn-default">Submit</button>'
+var copyBtn = '<button id="copyBtn" type="button" onclick="copyUri()" style="' + btnStyle + 'background-color: #89b247;">Copy to Clipboard</button>'
+var resetBtn = '<button type="button" onclick="resetGen()" style="' + btnStyle + 'color: #fff; background-color: #be2a2a;">Reset</button>'
+
+// Add the Form to the Page
+document.body.innerHTML += '<div width="100%" style="'+
+outputStyle +
+'" id="form">' +
+'<h1 style="font-size: 125%">URI-Generator </h1>' +
+'<p>Fill in the fields below and submit to generate a URI.</p> <form><div class=""><label for="programme_id">Programme ID</label><input style="' + inputStyle + '" type="number" class="" name="programme_id" placeholder="Programme ID"></div><div class=""><label for="channel_id">Channel ID</label><input style="' + inputStyle + '" type="number" class="" name="channel_id" placeholder="Channel ID"></div><div class=""><label for="redirect_to">Redirect To</label><input style="' + inputStyle + '" type="string" class="" name="redirect_to" placeholder="Redirect To"></div> '
++ submitBtn +
+ '</form> </div>';
+
+
+
+/*
+
+  2 - Generation Function:
       - Called by the Submission of a form that includes the 3 required fields.
       - It Validates the Data Submitted and if it passes it then creates a uri to output
 
@@ -48,7 +74,7 @@ function genURI() {
 
 /*
 
-  2 - Validation Function:
+  3 - Validation Function:
       - Called upon by genURI() function.
       - Runs through the provided data and ensures the following:
         -- All 3 input values have been provided.
@@ -108,7 +134,7 @@ function validate(programmeID, channelID, redirectTo) {
 
 /*
 
-  3 - Copy Function:
+  4 - Copy Function:
       - Called When the 'Copy to Clipboard' button is clicked after this script has generated a URI.
       - It will select a hidden textarea field which contains the URI and copy it to the user's clipboard.
 
@@ -126,7 +152,7 @@ function copyUri() {
 
 /*
 
-  4 - Output Function:
+  5 - Output Function:
       - After Validation has passed this function is run to take the 3 fields and add them to the set URI template and produce the actual output.
       - The output consists of an appended <div>.
 
@@ -138,15 +164,9 @@ function outputURI(programmeID, channelID, redirectTo) {
 
   //document.getElementById("output").innerHTML = uri;
 
-  // Defined some Variable for Output Styling
-  var outputStyle = "font-family: 'Roboto'; padding: 2.5%; color: #fff; background-color: #474e56; border-radius: 5px; font-size: 16pt;";
-  var btnStyle = 'color: #000; border: #000; margin: 2px; font-size: 100%;'
-  var copyBtn = '<button id="copyBtn" type="button" onclick="copyUri()" style="' + btnStyle + 'background-color: #89b247;">Copy to Clipboard</button>'
-  var resetBtn = '<button type="button" onclick="resetGen()" style="' + btnStyle + 'color: #fff; background-color: #ef4a4a;">Reset</button>'
-
   // Add the Output to the Page
-  document.body.innerHTML +=
-  '<div width="100%" style="'+ outputStyle +'" id="output">' + '<h1 style="font-size: 125%">URI: </h1>' + '<p id="uri" style="background-color: #fff; color: #000; border-radius: 5px; padding: 2px; border: 2px solid #000;">' + uri + '</p>' + copyBtn + '<textarea id="hiddenUri" style="position: absolute; top: -100%">' + uri +'</textarea>' + resetBtn + '</div>';
+  document.getElementById('form').innerHTML +=
+  '<div width="100%" style="'+ outputStyle +' padding: 0; max-width: 100%;" id="output">' + '<h1 style="font-size: 125%">URI: </h1>' + '<p id="uri" style="background-color: #fff; color: #000; border-radius: 5px; padding: 2px; border: 2px solid #000;">' + uri + '</p>' + copyBtn + '<textarea id="hiddenUri" style="position: absolute; top: -100%">' + uri +'</textarea>' + resetBtn + '</div>';
 
   // Remove Error Output if one exists
   var error = document.getElementById('error');
@@ -171,7 +191,7 @@ function outputErrors(result) {
     //console.log(result);
 
     // Styling Variables
-    var errorStyle = "font-family: 'Roboto'; padding: 2%; margin-bottom: 5px; color: #fff; background-color: #d02121; border-radius: 5px; font-size: 14pt;";
+    var errorStyle = "font-family: 'Roboto'; padding: 2%; margin-bottom: 5px; color: #fff; background-color: #be2a2a; border-radius: 5px; font-size: 14pt;";
 
     // Output Error Container
     document.body.innerHTML += '<div id="error" style="' + errorStyle + '"><h1>Error</h1></div>'
@@ -191,7 +211,7 @@ function outputErrors(result) {
 
 /*
 
-  6 - Reset Function:
+  7 - Reset Function:
       - This is called when the 'Reset' button is clicked after an ouput has been produced.
       - It simply removes the output <div> so that the user will not end up
         creating a long list of outputs.
