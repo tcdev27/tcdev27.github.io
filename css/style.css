@@ -509,6 +509,10 @@ article {
   #contactForm input, #contactForm textarea {
     font-size: 12pt; }
 
+#freepik {
+  width: 10%;
+  transform: translateY(2px); }
+
 @media screen and (max-device-width: 37.5em) {
   /*  43em        MOBILE                 */
   /*  Structure  */
@@ -613,7 +617,10 @@ article {
     right: 80%; }
   .screenshot-tablet {
     top: 62%;
-    right: 50%; } }
+    right: 50%; }
+  #freepik {
+    transform: translateY(-4px);
+    width: 40%; } }
 
 @media screen and (min-device-width: 38em) and (max-device-width: 68.74em) {
   section#cover {

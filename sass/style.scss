@@ -593,6 +593,11 @@ article {
     font-size: 12pt;
   }
 }
+
+#freepik {
+  width: 10%;
+  transform: translateY(2px);
+}
 @media screen and (max-device-width: 37.5em) { /*  43em        MOBILE                 */
   /*  Structure  */
   $x: 1;
@@ -724,6 +729,10 @@ article {
   .screenshot-tablet {
     top: 62%;
     right: 50%;
+  }
+  #freepik {
+  transform: translateY(-4px);
+  width: 40%;
   }
 }
 
