@@ -490,8 +490,7 @@ article {
 .description {
   font-size: 150%;
   padding: 1em;
-  font-family: "Nunito";
-  margin: 5px; }
+  font-family: "Nunito"; }
   .description h1, .description h2, .description h3 {
     font-family: "Roboto";
     padding-left: 10px; }
