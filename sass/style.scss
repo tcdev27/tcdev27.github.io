@@ -402,8 +402,20 @@ a:focus:not(:active)::after {
   margin: 2px;
   border-radius: 5px;
   padding: 6px;
-  h3 {
+  h1, h3 {
     font-family: $main;
+  }
+  h1 {
+    color: $white;
+    background-color: $faded;
+    border-right: 2px solid $black;
+    border-left: 2px solid $black;
+    border-top: 2px solid $black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 150%;
+    padding: 0;
+    margin: 2px;
   }
   article {
     border-bottom: 1px solid $black;
@@ -550,6 +562,7 @@ article {
   font-size: 150%;
   padding: 1em;
   font-family: $description;
+  margin: 5px;
   h1, h2, h3 {
     font-family: $main;
     padding-left: 10px;
@@ -557,14 +570,7 @@ article {
   span {
     float: right;
   }
-  .note {.tick_list {
-  list-style-type: none;
-  li>img {
-    padding-right: 0.5em;
-    transform: translateY(10px);
-  }
-}
-    font-size: 80%;
+  &.note {
     font-family: $note;
     margin: 1em;
     color: $ltBlue;

@@ -360,8 +360,19 @@ a:focus:not(:active)::after {
   margin: 2px;
   border-radius: 5px;
   padding: 6px; }
-  .skill h3 {
+  .skill h1, .skill h3 {
     font-family: "Roboto"; }
+  .skill h1 {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-right: 2px solid #000;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 150%;
+    padding: 0;
+    margin: 2px; }
   .skill article {
     border-bottom: 1px solid #000;
     border-top: none; }
@@ -479,22 +490,17 @@ article {
 .description {
   font-size: 150%;
   padding: 1em;
-  font-family: "Nunito"; }
+  font-family: "Nunito";
+  margin: 5px; }
   .description h1, .description h2, .description h3 {
     font-family: "Roboto";
     padding-left: 10px; }
   .description span {
     float: right; }
-  .description .note {
-    font-size: 80%;
+  .description.note {
     font-family: "Architects Daughter";
     margin: 1em;
     color: #88bff9; }
-    .description .note .tick_list {
-      list-style-type: none; }
-      .description .note .tick_list li > img {
-        padding-right: 0.5em;
-        transform: translateY(10px); }
 
 #icons .icon {
   padding: 0;
